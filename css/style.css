@@ -117,6 +117,7 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .doc-head .btn{margin-top:26px;}
 
 .doc-block{padding-top:72px;}
+#view-components .doc-block{padding-top:112px;}
 .doc-block h2{font-size:21px;line-height:1.3;font-weight:600;}
 .doc-block h3{font-size:15px;font-weight:600;}
 .block-note{margin-top:11px;font-size:14.5px;line-height:1.7;color:var(--muted);max-width:640px;}
@@ -195,6 +196,9 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .ratio-bar span{width:var(--w);background:var(--c);border-right:var(--bd,none);}
 .ratio-key{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;list-style:none;}
 .ratio-key li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);}
+.ratio-key--stack{flex-direction:column;gap:12px;max-width:700px;}
+.ratio-key--stack li{align-items:flex-start;line-height:1.6;}
+.ratio-key--stack i{margin-top:5px;}
 .ratio-key b{color:var(--navy);font-weight:600;}
 .ratio-key i{width:11px;height:11px;border-radius:3px;flex:0 0 auto;}
 
@@ -224,6 +228,78 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .type-row-label{font-size:12px;font-weight:600;color:var(--navy);line-height:1.45;}
 .type-row-label small{display:block;font-weight:400;color:var(--muted);font-size:11px;}
 .type-sample{overflow-wrap:anywhere;}
+
+/* ==================== TYPOGRAPHY DON'TS ====================
+   Ported from Figma node 9979:110848 ("Typograpghy Do's and Don'ts"). Each
+   sample deliberately commits the mistake it warns about, exactly as the
+   Figma frame does — the specimen IS the explanation. */
+.dont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 32px;max-width:900px;}
+.dont-item{display:flex;gap:12px;align-items:flex-start;}
+.dont-x{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:#F2665C;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px;}
+.dont-sample{font-size:19px;color:var(--navy);font-family:var(--font-display);font-weight:500;}
+/* 1 — line spacing too tight, then too loose */
+.dont-sample--spacing span{display:block;}
+.dont-sample--spacing .tight{line-height:.85;}
+.dont-sample--spacing .loose{line-height:2.1;}
+/* 2 — heavy weight on a headline */
+.dont-sample--heavy{font-weight:800;}
+/* 3 — multiple weights mixed inside one headline */
+.dont-sample--mixed .w7{font-weight:700;}
+.dont-sample--mixed .it{font-style:italic;font-weight:400;}
+/* 4 — a typeface from outside the system */
+.dont-sample--face{font-family:Georgia,'Times New Roman',serif;}
+/* 5 — an icon dropped inline between words */
+.dont-sample--icon svg{width:19px;height:19px;vertical-align:-3px;margin:0 4px;color:var(--navy);}
+@media (max-width:900px){ .dont-grid{grid-template-columns:1fr;} }
+
+/* ==================== SHADOWS & BLURS ====================
+   Ported from Figma page 6:15 ("Shadows & Blurs"). Shadow values are the
+   literal Drop shadow/* effect tokens; blur radii are the Background blur/*
+   tokens, rendered with backdrop-filter (the CSS equivalent of Figma's
+   BACKGROUND_BLUR) over a real photograph. */
+.fx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:32px;}
+.fx-block{display:flex;flex-direction:column;gap:14px;align-items:center;}
+.fx-name{font-family:'SF Mono','Menlo',monospace;font-size:12px;color:var(--muted);
+  background:none;border:none;padding:2px 6px;border-radius:6px;cursor:pointer;transition:background .15s,color .15s;}
+.fx-name:hover{background:var(--paper);color:var(--navy);}
+.fx-name:focus-visible{outline:2px solid var(--violet);outline-offset:1px;}
+.fx-card{width:100%;aspect-ratio:1;background:var(--surface);border-radius:12px;}
+.fx-blur{position:relative;width:100%;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--paper);}
+.fx-blur img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.fx-blur .veil{position:absolute;inset:0;backdrop-filter:blur(var(--b));-webkit-backdrop-filter:blur(var(--b));}
+.fx-note{font-family:'SF Mono','Menlo',monospace;font-size:11px;color:var(--muted);text-align:center;line-height:1.5;}
+@media (max-width:900px){ .fx-grid{grid-template-columns:1fr 1fr;padding:20px;gap:24px 16px;} }
+
+/* ==================== SPACING USAGE ==================== */
+.sp-strip{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 24px;}
+.sp-unit{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.sp-unit i{display:block;background:var(--violet);border-radius:3px;height:14px;}
+.sp-unit span{font-family:'SF Mono','Menlo',monospace;font-size:10.5px;color:var(--muted);}
+.sp-demo{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;}
+.sp-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.sp-card-head{font-size:12px;font-weight:600;padding:10px 16px;border-bottom:1px solid var(--line);}
+.sp-card--do .sp-card-head{color:#2F8A46;}
+.sp-card--dont .sp-card-head{color:#C4453F;}
+.sp-card-body{padding:20px 16px;}
+.sp-stack{display:flex;flex-direction:column;}
+.sp-stack h4{font-family:var(--font-display);font-size:15px;font-weight:600;margin:0;color:var(--navy);}
+.sp-stack p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.sp-stack .pill{align-self:flex-start;font-size:11.5px;font-weight:600;padding:4px 10px;
+  border-radius:100px;background:rgba(84,70,255,.12);color:var(--violet);}
+/* on-scale rhythm: 8 / 4 / 16 */
+.sp-stack--good{gap:0;}
+.sp-stack--good .pill{margin-bottom:8px;}
+.sp-stack--good h4{margin-bottom:4px;}
+.sp-stack--good p{margin-bottom:16px;}
+/* off-scale rhythm: 7 / 13 / 21 */
+.sp-stack--bad{gap:0;}
+.sp-stack--bad .pill{margin-bottom:7px;}
+.sp-stack--bad h4{margin-bottom:13px;}
+.sp-stack--bad p{margin-bottom:21px;}
+@media (max-width:900px){ .sp-demo{grid-template-columns:1fr;} }
 
 /* ==================== ICONS ==================== */
 .icon-filter{margin-bottom:24px;}
@@ -357,6 +433,297 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
   transition:opacity .2s,transform .2s var(--ease);
   font-family:'SF Mono','Menlo',monospace;}
 .toast.is-up{opacity:1;transform:translate(-50%,0);}
+
+/* ==================== COMPONENTS DEMO ==================== */
+.demo-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+.demo-row:last-child{margin-bottom:0;}
+.demo-label{font-size:12.5px;font-weight:600;color:var(--muted);width:74px;flex:0 0 auto;}
+.btn--sm{padding:7px 14px;font-size:12.5px;}
+.btn--lg{padding:13px 24px;font-size:15px;}
+.btn:disabled{opacity:.5;cursor:default;pointer-events:none;}
+.btn:focus-visible{outline:2px solid var(--violet);outline-offset:2px;}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;max-width:640px;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-size:13px;font-weight:600;color:var(--navy);}
+.field input[type="text"],.field select{font-family:inherit;font-size:14px;padding:10px 13px;
+  border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--navy);
+  outline:none;transition:border-color .18s,box-shadow .18s;appearance:none;}
+.field input:focus,.field select:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(84,70,255,.12);}
+.field-msg{font-size:12px;color:var(--muted);}
+.field.is-error input{border-color:#C4453F;}
+.field.is-error .field-msg{color:#C4453F;font-weight:600;}
+.field.is-disabled input{background:var(--paper);color:var(--muted);cursor:not-allowed;}
+.check-col{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+.check-row{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--navy);}
+.check-row input[type="checkbox"],.check-row input[type="radio"]{accent-color:var(--violet);width:17px;height:17px;flex:0 0 auto;}
+.tgl-row{display:flex;align-items:center;gap:11px;font-size:14px;color:var(--navy);}
+.tgl{position:relative;width:38px;height:21px;border-radius:100px;background:var(--line);
+  border:none;cursor:pointer;flex:0 0 auto;transition:background .18s;padding:0;}
+.tgl::after{content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;
+  background:#fff;transition:transform .18s var(--ease);}
+.tgl.is-on{background:var(--violet);}
+.tgl.is-on::after{transform:translateX(17px);}
+
+.tag-row{display:flex;gap:9px;flex-wrap:wrap;}
+.tag{font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;display:inline-flex;align-items:center;}
+.tag--neutral{background:var(--paper);color:var(--navy);}
+.tag--brand{background:rgba(84,70,255,.12);color:var(--violet);}
+.tag--positive{background:rgba(47,138,70,.12);color:#2F8A46;}
+.tag--negative{background:rgba(196,69,63,.12);color:#C4453F;}
+.tag--notice{background:rgba(184,110,10,.14);color:#8A5308;}
+
+.alert-stack{display:flex;flex-direction:column;gap:12px;max-width:640px;}
+.alert{display:flex;gap:11px;align-items:flex-start;padding:13px 16px;border-radius:10px;border:1px solid transparent;}
+.alert svg{width:17px;height:17px;flex:0 0 auto;margin-top:1px;}
+.alert p{margin:0;font-size:13.5px;line-height:1.55;}
+.alert b{font-weight:600;}
+.alert--info{background:rgba(84,70,255,.08);border-color:rgba(84,70,255,.28);color:var(--navy);}
+.alert--notice{background:rgba(184,110,10,.08);border-color:rgba(184,110,10,.32);color:var(--navy);}
+.alert--negative{background:rgba(196,69,63,.08);border-color:rgba(196,69,63,.3);color:var(--navy);}
+.alert--positive{background:rgba(47,138,70,.08);border-color:rgba(47,138,70,.3);color:var(--navy);}
+
+.demo-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.demo-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;}
+.demo-card h3{margin-bottom:7px;}
+.demo-card p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+.tabs-demo{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:18px;}
+.tab-demo{font-family:inherit;font-size:13.5px;font-weight:600;padding:9px 4px;margin-right:22px;
+  color:var(--muted);border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;}
+.tab-demo.is-on{color:var(--navy);border-bottom-color:var(--violet);}
+.pg-demo{display:flex;align-items:center;gap:5px;}
+.pg-btn{width:32px;height:32px;border-radius:7px;border:1px solid var(--line);background:var(--surface);
+  font-family:'SF Mono','Menlo',monospace;font-size:12.5px;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.pg-btn.is-on{background:var(--violet);color:#fff;border-color:var(--violet);}
+.tt-demo{position:relative;display:inline-flex;margin-top:30px;}
+.tt-bubble{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#fff;font-size:11.5px;font-weight:500;padding:7px 11px;
+  border-radius:7px;white-space:nowrap;}
+.tt-bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--navy);}
+
+/* ==================== FIGMA BUTTON SPEC ====================
+   Ported from the Button component set (5 types x 5 states x destructive x 3
+   sizes) in Figma — kOuvzveP1oEWwJHRvsgfZy, node 2109:181491. Real pseudo-
+   classes, not static swatches: hover/focus/active/disabled all match the
+   source exactly, so trying the buttons IS reading the spec. */
+.fbtn-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
+.fbtn-row:last-child{margin-bottom:0;}
+.fbtn-row-label{font-size:12.5px;font-weight:600;color:var(--muted);width:78px;flex:0 0 auto;}
+
+.fbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-body);font-weight:500;border-radius:8px;border:1px solid transparent;
+  cursor:pointer;transition:background .15s,color .15s,border-color .15s,box-shadow .15s;
+  height:40px;padding:0 18px;font-size:14px;line-height:16px;
+}
+.fbtn--lg{height:48px;padding:0 22px;font-size:16px;line-height:18px;}
+.fbtn--sm{height:32px;padding:0 14px;font-size:12px;line-height:14px;}
+.fbtn--link{height:auto;padding:2px 4px;}
+.fbtn:disabled{cursor:not-allowed;}
+.fbtn:focus-visible{outline:none;}
+
+/* Primary */
+.fbtn--primary{background:#5446ff;color:#ecefff;}
+.fbtn--primary:hover{background:#dde1ff;color:#5446ff;}
+.fbtn--primary:active{background:#c2c8ff;color:#5336f5;}
+.fbtn--primary:focus-visible{background:#5336f5;color:#ecefff;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(84,70,255,.45);}
+.fbtn--primary:disabled{background:#e5e5e5;color:#a3a3a3;}
+.fbtn--primary.fbtn--destructive{background:#ef4444;color:#fff;}
+.fbtn--primary.fbtn--destructive:hover{background:#dc2626;color:#fff;}
+.fbtn--primary.fbtn--destructive:active{background:#dc2626;color:#fecaca;}
+.fbtn--primary.fbtn--destructive:focus-visible{background:#dc2626;color:#fecaca;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(239,68,68,.45);}
+.fbtn--primary.fbtn--destructive:disabled{background:#f87171;color:#fecaca;}
+
+/* Secondary */
+.fbtn--secondary{background:#dde1ff;color:#5446ff;}
+.fbtn--secondary:hover{background:#c2c8ff;color:#5446ff;}
+.fbtn--secondary:active{background:#9ca3ff;color:#5336f5;}
+.fbtn--secondary:focus-visible{background:#7675ff;color:#ecefff;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(84,70,255,.4);}
+.fbtn--secondary:disabled{background:#e5e5e5;color:#a3a3a3;}
+.fbtn--secondary.fbtn--destructive{background:#fef2f2;color:#ef4444;}
+.fbtn--secondary.fbtn--destructive:hover{background:#fee2e2;color:#dc2626;}
+.fbtn--secondary.fbtn--destructive:active{background:#fee2e2;color:#ef4444;}
+.fbtn--secondary.fbtn--destructive:focus-visible{background:#fee2e2;color:#ef4444;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(239,68,68,.35);}
+.fbtn--secondary.fbtn--destructive:disabled{background:#fef2f2;color:#f87171;}
+
+/* Tertiary — plain text, neutral hover/press wash */
+.fbtn--tertiary{background:transparent;color:#374151;}
+.fbtn--tertiary:hover{background:#f9fafb;color:#374151;}
+.fbtn--tertiary:active{background:#f9fafb;color:#6b7280;}
+.fbtn--tertiary:focus-visible{background:#f9fafb;color:#6b7280;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(107,114,128,.3);}
+.fbtn--tertiary:disabled{background:transparent;color:#d1d5db;}
+.fbtn--tertiary.fbtn--destructive{background:transparent;color:#ef4444;}
+.fbtn--tertiary.fbtn--destructive:hover{background:#fef2f2;color:#ef4444;}
+.fbtn--tertiary.fbtn--destructive:active{background:#fef2f2;color:#ef4444;}
+.fbtn--tertiary.fbtn--destructive:focus-visible{background:#fef2f2;color:#ef4444;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(239,68,68,.3);}
+.fbtn--tertiary.fbtn--destructive:disabled{background:transparent;color:#f87171;}
+
+/* Outlined — border carries the colour, fill stays flat */
+.fbtn--outlined{background:transparent;color:#2123ff;border-color:#9091ff;}
+.fbtn--outlined:hover{border-color:#a4abff;}
+.fbtn--outlined:active{background:#e6ecff;border-color:#98a2ff;color:#4a58ff;}
+.fbtn--outlined:focus-visible{border-color:#4a58ff;box-shadow:0 0 0 3px rgba(74,88,255,.22);}
+.fbtn--outlined:disabled{border-color:#bdc7fd;color:#7c91ff;}
+.fbtn--outlined.fbtn--destructive{color:#ef4444;border-color:#f58989;}
+.fbtn--outlined.fbtn--destructive:hover{border-color:#f58989;}
+.fbtn--outlined.fbtn--destructive:active{background:#fefefe;border-color:#f58989;}
+.fbtn--outlined.fbtn--destructive:focus-visible{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.2);}
+.fbtn--outlined.fbtn--destructive:disabled{border-color:#faa6a6;color:#f87171;}
+
+/* Link — text only, no fill or border at any size */
+.fbtn--link{background:none;color:#2123ff;}
+.fbtn--link:hover{color:#1200ff;}
+.fbtn--link:active{color:#4a58ff;}
+.fbtn--link:focus-visible{color:#2123ff;outline:2px solid #9091ff;outline-offset:2px;border-radius:4px;}
+.fbtn--link:disabled{color:#7c91ff;}
+.fbtn--link.fbtn--destructive{color:#ef4444;}
+.fbtn--link.fbtn--destructive:hover{color:#dc2626;}
+.fbtn--link.fbtn--destructive:active{color:#f87171;}
+.fbtn--link.fbtn--destructive:focus-visible{outline-color:#f58989;}
+.fbtn--link.fbtn--destructive:disabled{color:#f87171;}
+
+/* ==================== FIGMA BADGE SPEC ====================
+   Ported from the Badge component set in Figma — kOuvzveP1oEWwJHRvsgfZy,
+   node 2179:185908. 5 types x 3 styles x 3 states x 4 shapes x 3 sizes = 540
+   variants in the source; this covers every type/style/state at the two
+   text-label shapes (Rounded, Pill), plus one row each of Dot and Circle. */
+.fbadge-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+.fbadge-row:last-child{margin-bottom:0;}
+.fbadge-row-label{font-size:12.5px;font-weight:600;color:var(--muted);width:78px;flex:0 0 auto;}
+
+.fbadge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-body);font-weight:500;font-size:14px;line-height:16px;
+  padding:6px 14px;border-radius:8px;border:1px solid transparent;
+  cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+}
+.fbadge:disabled{cursor:not-allowed;}
+.fbadge:focus-visible{outline:2px solid #9091ff;outline-offset:2px;}
+.fbadge--pill{border-radius:100px;}
+.fbadge--dot{border-radius:100px;padding-left:10px;}
+.fbadge--dot::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto;}
+.fbadge--circle{border-radius:50%;width:32px;height:32px;padding:0;justify-content:center;font-size:13px;}
+
+/* Primary */
+.fbadge--primary.fbadge--filled{background:#5446ff;color:#fff;}
+.fbadge--primary.fbadge--filled:hover{background:#dde1ff;color:#5446ff;}
+.fbadge--primary.fbadge--filled:disabled{background:#e5e5e5;color:#a3a3a3;}
+.fbadge--primary.fbadge--accent{background:#c8f006;color:#2123ff;}
+.fbadge--primary.fbadge--accent:hover{background:#a4be01;color:#5446ff;}
+.fbadge--primary.fbadge--accent:disabled{background:#e5e5e5;color:#a3a3a3;}
+.fbadge--primary.fbadge--outlined{background:#fff;color:#5446ff;border-color:#a9a2ff;}
+.fbadge--primary.fbadge--outlined:hover{background:#e6ecff;}
+.fbadge--primary.fbadge--outlined:disabled{color:#a3a3a3;border-color:#d1d5db;}
+
+/* Neutral */
+.fbadge--neutral.fbadge--filled{background:#111827;color:#fff;}
+.fbadge--neutral.fbadge--filled:hover{background:#374151;color:#fff;}
+.fbadge--neutral.fbadge--filled:disabled{background:#e5e7eb;color:#9ca3af;}
+.fbadge--neutral.fbadge--accent{background:#f3f4f6;color:#374151;}
+.fbadge--neutral.fbadge--accent:hover{background:#e5e7eb;color:#111827;}
+.fbadge--neutral.fbadge--accent:disabled{background:#f3f4f6;color:#9ca3af;}
+.fbadge--neutral.fbadge--outlined{background:#fff;color:#374151;border-color:#f2f3f5;}
+.fbadge--neutral.fbadge--outlined:hover{background:#f3f4f6;color:#111827;}
+.fbadge--neutral.fbadge--outlined:disabled{color:#9ca3af;border-color:#f2f3f5;}
+
+/* Success */
+.fbadge--success.fbadge--filled{background:#22c55e;color:#f0fcf4;}
+.fbadge--success.fbadge--filled:hover{background:#16a34a;color:#f0fcf4;}
+.fbadge--success.fbadge--filled:disabled{background:#86efac;color:#f0fcf4;}
+.fbadge--success.fbadge--accent{background:#f0fcf4;color:#22c55e;}
+.fbadge--success.fbadge--accent:hover{background:#dcfce7;color:#16a34a;}
+.fbadge--success.fbadge--accent:disabled{background:#f0fcf4;color:#86efac;}
+.fbadge--success.fbadge--outlined{background:#fff;color:#22c55e;border-color:#90e2ae;}
+.fbadge--success.fbadge--outlined:hover{background:#f0fcf4;}
+.fbadge--success.fbadge--outlined:disabled{color:#4ade80;border-color:#bbf7d0;}
+
+/* Warning */
+.fbadge--warning.fbadge--filled{background:#f59e0b;color:#fffbeb;}
+.fbadge--warning.fbadge--filled:hover{background:#d97706;color:#fffbeb;}
+.fbadge--warning.fbadge--filled:disabled{background:#fcd24d;color:#fffbeb;}
+.fbadge--warning.fbadge--accent{background:#fffbeb;color:#f59e0b;}
+.fbadge--warning.fbadge--accent:hover{background:#fef3c7;color:#d97706;}
+.fbadge--warning.fbadge--accent:disabled{background:#fffbeb;color:#fcd24d;}
+.fbadge--warning.fbadge--outlined{background:#fff;color:#f59e0b;border-color:#face85;}
+.fbadge--warning.fbadge--outlined:hover{background:#fffbeb;}
+.fbadge--warning.fbadge--outlined:disabled{color:#fbbf24;border-color:#fef3c7;}
+
+/* Destructive */
+.fbadge--destructive.fbadge--filled{background:#ef4444;color:#fef2f2;}
+.fbadge--destructive.fbadge--filled:hover{background:#dc2626;color:#fef2f2;}
+.fbadge--destructive.fbadge--filled:disabled{background:#f87171;color:#fef2f2;}
+.fbadge--destructive.fbadge--accent{background:#fef2f2;color:#ef4444;}
+.fbadge--destructive.fbadge--accent:hover{background:#fee2e2;color:#dc2626;}
+.fbadge--destructive.fbadge--accent:disabled{background:#fef2f2;color:#f87171;}
+.fbadge--destructive.fbadge--outlined{background:#fff;color:#ef4444;border-color:#f7a1a1;}
+.fbadge--destructive.fbadge--outlined:hover{background:#fef2f2;}
+.fbadge--destructive.fbadge--outlined:disabled{color:#ef4444;border-color:#fecaca;}
+
+/* ==================== FIGMA BREADCRUMB SPEC ====================
+   Ported from the Breadcrumb component set in Figma — kOuvzveP1oEWwJHRvsgfZy,
+   node 124:40953. 4 styles (Link/Box/Outlined/Filled) x 4 indicators
+   (Chevron/Slash/Arrow/Indicator) x icon-or-not x state. Colours reuse the
+   same Neutral/Primary/Secondary-Indigo tokens already verified on Buttons
+   and Badges, since this file draws all three from one palette. */
+.fcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:2px;font-family:var(--font-body);font-size:14px;}
+.fcrumb--box{border:1px solid #e5e7eb;border-radius:10px;padding:8px 12px;background:#fff;}
+.fcrumb-home{display:inline-flex;align-items:center;color:#6b7280;margin-right:2px;}
+.fcrumb-home svg{width:16px;height:16px;}
+.fcrumb-sep{color:#d1d5db;font-size:13px;padding:0 6px;user-select:none;}
+.fcrumb a, .fcrumb span.fcrumb-current{
+  font-family:inherit;font-size:14px;font-weight:500;color:#374151;
+  text-decoration:none;border-radius:7px;transition:background .15s,color .15s,border-color .15s;
+}
+.fcrumb a{cursor:pointer;}
+.fcrumb a:hover{color:#111827;}
+.fcrumb a:focus-visible{outline:2px solid #9091ff;outline-offset:2px;}
+.fcrumb span.fcrumb-current{color:#2123ff;font-weight:600;}
+.fcrumb a[aria-disabled="true"]{color:#d1d5db;cursor:not-allowed;pointer-events:none;}
+
+/* Outlined — every crumb gets its own bordered pill */
+.fcrumb--outlined a, .fcrumb--outlined span.fcrumb-current{
+  padding:5px 12px;border:1px solid #e5e7eb;
+}
+.fcrumb--outlined a:hover{background:#f9fafb;border-color:#d1d5db;}
+.fcrumb--outlined span.fcrumb-current{border-color:#a9a2ff;}
+
+/* Filled — every crumb gets a filled pill, current one indigo */
+.fcrumb--filled a, .fcrumb--filled span.fcrumb-current{
+  padding:5px 12px;border-radius:100px;background:#f3f4f6;
+}
+.fcrumb--filled a:hover{background:#e5e7eb;color:#111827;}
+.fcrumb--filled span.fcrumb-current{background:#dde1ff;color:#5446ff;}
+
+.fcrumb-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+.fcrumb-row:last-child{margin-bottom:0;}
+.fcrumb-row-label{font-size:12.5px;font-weight:600;color:var(--muted);width:78px;flex:0 0 auto;}
+
+/* ==================== MOTION ==================== */
+.motion-row{display:flex;align-items:center;gap:14px;margin-bottom:13px;}
+.motion-label{font-family:'SF Mono','Menlo',monospace;font-size:12px;color:var(--muted);width:160px;flex:0 0 auto;}
+.motion-bar{height:14px;border-radius:4px;background:var(--violet);}
+.motion-val{font-family:'SF Mono','Menlo',monospace;font-size:12px;color:var(--navy);flex:0 0 auto;}
+.ease-grid{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
+.ease-card{flex:1 1 200px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;}
+.ease-card svg{width:100%;height:50px;display:block;margin-bottom:9px;}
+.ease-name{font-family:'SF Mono','Menlo',monospace;font-weight:600;font-size:12.5px;color:var(--navy);margin-bottom:4px;}
+.ease-use{font-size:12.5px;color:var(--muted);line-height:1.55;}
+
+/* ==================== ACCESSIBILITY ==================== */
+.contrast-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;}
+.contrast-card{border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);}
+.contrast-sample{font-family:var(--font-display);font-weight:600;font-size:19px;}
+.contrast-meta{display:flex;justify-content:space-between;align-items:center;font-family:'SF Mono','Menlo',monospace;font-size:11.5px;}
+.contrast-badge{font-weight:600;padding:3px 10px;border-radius:100px;}
+.contrast-badge--pass{background:rgba(47,138,70,.14);color:#2F8A46;}
+.contrast-badge--fail{background:rgba(196,69,63,.12);color:#C4453F;}
+
+@media (max-width:900px){
+  .form-grid,.demo-card-grid,.contrast-grid{grid-template-columns:1fr;}
+}
 
 /* ==================== EMBED (Usage) ==================== */
 .embed-frame{position:relative;width:100%;max-width:1000px;aspect-ratio:16/10;
