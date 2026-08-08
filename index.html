@@ -97,7 +97,7 @@
           <a class="topic-card" href="#shadows" data-route="shadows"><span class="topic-card-title">Shadows &amp; blurs</span><span class="topic-card-note">Six shadow levels and six background blurs, at their real token values.</span></a>
           <a class="topic-card" href="#icons" data-route="icons"><span class="topic-card-title">Icons</span><span class="topic-card-note">The full 66-icon library — one line weight, one accent colour, one white chip.</span></a>
           <a class="topic-card" href="#components" data-route="components"><span class="topic-card-title">Components</span><span class="topic-card-note">Buttons, badges, breadcrumbs, fields, alerts, and cards, rendered live.</span></a>
-          <a class="topic-card" href="#tokens" data-route="tokens"><span class="topic-card-title">Design tokens</span><span class="topic-card-note">444 tokens as CSS, SCSS, JS, and JSON — the values behind everything here.</span></a>
+          <a class="topic-card" href="#tokens" data-route="tokens"><span class="topic-card-title">Design tokens</span><span class="topic-card-note">281 tokens as CSS, SCSS, JS, and JSON — the values behind everything here.</span></a>
           <a class="topic-card" href="#motion" data-route="motion"><span class="topic-card-title">Motion</span><span class="topic-card-note">The exact durations and easings this site's own transitions run on.</span></a>
           <a class="topic-card" href="#accessibility" data-route="accessibility"><span class="topic-card-title">Accessibility</span><span class="topic-card-note">Real computed contrast ratios, focus behaviour, and the alt-text convention.</span></a>
           <a class="topic-card" href="#voice" data-route="voice"><span class="topic-card-title">Voice &amp; content</span><span class="topic-card-note">How this site's own copy is written, made into an explicit rule.</span></a>
@@ -799,13 +799,33 @@
     </section>
 
     <section class="doc-block" id="icons-usage">
-      <h2>Usage</h2>
-      <ul class="principle-list">
-        <li>Never introduce a second colour inside a single icon.</li>
-        <li>Never place an icon directly on a coloured background — the white chip needs a light surface.</li>
-        <li>Keep the chip intact; don't crop it to a bare glyph.</li>
-        <li><b>4 icons are unnamed in the source</b> — <code>Group 1814222686</code>, <code>Group 1814222716</code>, <code>Group 1814222721</code>, <code>Group 1814227111</code> are raw Figma layer IDs and need real names upstream.</li>
-      </ul>
+      <h2>Do's and don'ts</h2>
+      <p class="block-note">The set only reads as a set because every icon obeys the same three constraints: one line weight, one accent colour, one white chip. Break any of them and the icon stops looking like it came from here.</p>
+      <div class="pair-grid">
+        <div class="rules rules--do">
+          <h3>Do</h3>
+          <ul>
+            <li>Keep the white chip intact — it's what lets the set sit on off-white without disappearing</li>
+            <li>Scale the whole icon, chip included, so the line weight stays proportional</li>
+            <li>Pick the icon whose literal meaning matches; a close-enough metaphor confuses more than no icon</li>
+            <li>Use one icon per meaning across the product, and reuse it everywhere that meaning appears</li>
+          </ul>
+        </div>
+        <div class="rules rules--dont">
+          <h3>Don't</h3>
+          <ul>
+            <li>Introduce a second colour inside a single icon</li>
+            <li>Place an icon directly on a coloured background — the white chip needs a light surface</li>
+            <li>Crop the chip away to a bare glyph, or recolour the chip</li>
+            <li>Redraw, rotate, or mirror an icon to make a new one — request it instead</li>
+            <li>Mix these with icons from another library in the same view</li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert alert--notice" style="margin-top:24px;max-width:760px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.7 18a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+        <p><b>4 icons are unnamed in the source.</b> <code>Group 1814222686</code>, <code>Group 1814222716</code>, <code>Group 1814222721</code>, and <code>Group 1814227111</code> are raw Figma layer IDs. They still download correctly, but they can't be searched by meaning until they're renamed upstream.</p>
+      </div>
     </section>
   </article>
 
@@ -973,6 +993,32 @@
         </div>
       </div>
       <p class="block-note" style="margin-top:22px;">These are <b>background</b> blurs — in Figma <code>BACKGROUND_BLUR</code>, in CSS <code>backdrop-filter</code>. They blur whatever sits behind the layer, which is what makes them right for overlays, sheets, and disabled surfaces. To blur the element's own pixels instead, that's a layer blur, and it isn't in the token set.</p>
+    </section>
+
+    <section class="doc-block" id="fx-rules">
+      <h2>Do's and don'ts</h2>
+      <p class="block-note">Depth is a hierarchy signal, not decoration. The further an element sits from the page, the more it should be asking for attention — and only one thing can be asking at a time.</p>
+      <div class="pair-grid">
+        <div class="rules rules--do">
+          <h3>Do</h3>
+          <ul>
+            <li>Map the six shadows to real elevation: xsmall/small for resting cards, medium/large for menus and popovers, xlarge/xxlarge for modals</li>
+            <li>Raise a card's shadow one step on hover to signal it's clickable</li>
+            <li>Pair a blur with a translucent fill, so text on top stays readable</li>
+            <li>Use blur to push a surface back — sheets, disabled tiles, anything behind an overlay</li>
+          </ul>
+        </div>
+        <div class="rules rules--dont">
+          <h3>Don't</h3>
+          <ul>
+            <li>Invent a shadow — no custom offsets, no tinted or coloured casts, no upward angles</li>
+            <li>Put xlarge or xxlarge on something that isn't floating above the whole page</li>
+            <li>Stack a shadow and a border to fake more depth; pick one edge treatment</li>
+            <li>Blur behind body copy the user has to read — reach for a solid surface instead</li>
+          </ul>
+        </div>
+      </div>
+      <p class="block-note" style="margin-top:22px;">If two elements on screen carry the same shadow, they're claiming the same layer — which is fine when they genuinely are peers (a row of cards) and a bug when they aren't (a card and the modal above it).</p>
     </section>
   </article>
 
@@ -1264,14 +1310,14 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Design tokens</span><span>Overview</span></nav>
     <header class="doc-head">
       <h1>Design tokens</h1>
-      <p class="doc-lead">444 tokens, exported from Figma and published in the formats you actually build with. Every value on this site comes from these files — if it isn't a token, it isn't in the system.</p>
+      <p class="doc-lead">281 tokens, exported from Figma and published in the formats you actually build with. Every value on this site comes from these files — if it isn't a token, it isn't in the system.</p>
       <a class="btn btn--primary" href="assets/downloads/cleartax-tokens.zip" download>Download all tokens (.zip)<span aria-hidden="true">↓</span></a>
     </header>
 
     <section class="doc-block" id="tokens-count">
       <h2>What's in the set</h2>
       <ul class="stat-row">
-          <li><b>295</b><span>Primitives</span></li>
+          <li><b>132</b><span>Primitives</span></li>
           <li><b>57</b><span>Semantics</span></li>
           <li><b>45</b><span>Typography</span></li>
           <li><b>17</b><span>Spacing</span></li>
@@ -1279,6 +1325,7 @@
           <li><b>5</b><span>Layout</span></li>
           <li><b>14</b><span>Components</span></li>
       </ul>
+      <p class="block-note" style="margin-top:20px;">These are the tokens the Cleartax system actually uses. The raw Figma variable export carries 163 further primitive values — Tailwind default ramps nothing here references — which are excluded from these counts and hidden on <a href="#tokens-primitives" data-route="tokens-primitives">Primitives</a>. They remain in the downloadable JSON, so the export stays a faithful copy of the Figma file.</p>
     </section>
 
     <section class="doc-block" id="tokens-tiers">
@@ -1339,7 +1386,8 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Design tokens</span><span>Primitives</span></nav>
     <header class="doc-head">
       <h1>Colour primitives</h1>
-      <p class="doc-lead">The raw ramps — 295 colours across 31 families. These are the paint, not the instructions. Build with semantic tokens instead and let these sit underneath.</p>
+      <p class="doc-lead">The raw ramps — 132 colours across 14 families. These are the paint, not the instructions. Build with semantic tokens instead and let these sit underneath.</p>
+      <p class="doc-lead" style="margin-top:12px;">17 further ramps ship in the Figma variable export — Slate, Zinc, Teal, Emerald, Cyan, Sky, Violet, Fuchsia, Pink, Rose, Purple, Orange, and Yellow — but nothing in the Cleartax system uses them. They're Tailwind defaults that came along with the export, so they're hidden here. They're still present in <code>primitives.json</code> if you need to look one up.</p>
       <p class="doc-lead" style="margin-top:12px;">Our brand four live here: navy is <code>Primary / 950</code>, off-white is <code>Secondary / Stone / 100</code>, lime is <code>Secondary / Lime / 500</code>, violet is <code>Secondary / Indigo / 500</code>.</p>
       <div class="btn-row"><a class="btn btn--ghost" href="assets/tokens/json/primitives.json" data-download="primitives" data-filename="primitives.json" download>primitives.json<span aria-hidden="true">↓</span></a></div>
     </header>
@@ -1378,21 +1426,6 @@
           </div>
         </div>
         <div class="fam">
-          <h3>Secondary / Slate <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#F8FAFC" title="Copy #F8FAFC · --ct-color-secondary-slate-50"><span class="shade-sw" style="background:#F8FAFC"></span><span class="shade-n">50</span><span class="shade-hex">#F8FAFC</span></button>
-            <button class="shade" data-copy="#F1F5F9" title="Copy #F1F5F9 · --ct-color-secondary-slate-100"><span class="shade-sw" style="background:#F1F5F9"></span><span class="shade-n">100</span><span class="shade-hex">#F1F5F9</span></button>
-            <button class="shade" data-copy="#E2E8F0" title="Copy #E2E8F0 · --ct-color-secondary-slate-200"><span class="shade-sw" style="background:#E2E8F0"></span><span class="shade-n">200</span><span class="shade-hex">#E2E8F0</span></button>
-            <button class="shade" data-copy="#CBD5E1" title="Copy #CBD5E1 · --ct-color-secondary-slate-300"><span class="shade-sw" style="background:#CBD5E1"></span><span class="shade-n">300</span><span class="shade-hex">#CBD5E1</span></button>
-            <button class="shade" data-copy="#94A3B8" title="Copy #94A3B8 · --ct-color-secondary-slate-400"><span class="shade-sw" style="background:#94A3B8"></span><span class="shade-n">400</span><span class="shade-hex">#94A3B8</span></button>
-            <button class="shade" data-copy="#64748B" title="Copy #64748B · --ct-color-secondary-slate-500"><span class="shade-sw" style="background:#64748B"></span><span class="shade-n">500</span><span class="shade-hex">#64748B</span></button>
-            <button class="shade" data-copy="#475569" title="Copy #475569 · --ct-color-secondary-slate-600"><span class="shade-sw" style="background:#475569"></span><span class="shade-n">600</span><span class="shade-hex">#475569</span></button>
-            <button class="shade" data-copy="#334155" title="Copy #334155 · --ct-color-secondary-slate-700"><span class="shade-sw" style="background:#334155"></span><span class="shade-n">700</span><span class="shade-hex">#334155</span></button>
-            <button class="shade" data-copy="#1E293B" title="Copy #1E293B · --ct-color-secondary-slate-800"><span class="shade-sw" style="background:#1E293B"></span><span class="shade-n">800</span><span class="shade-hex">#1E293B</span></button>
-            <button class="shade" data-copy="#0F172A" title="Copy #0F172A · --ct-color-secondary-slate-900"><span class="shade-sw" style="background:#0F172A"></span><span class="shade-n">900</span><span class="shade-hex">#0F172A</span></button>
-          </div>
-        </div>
-        <div class="fam">
           <h3>Secondary / Gray <span>10</span></h3>
           <div class="shade-row">
             <button class="shade" data-copy="#FAFAFA" title="Copy #FAFAFA · --ct-color-secondary-gray-50"><span class="shade-sw" style="background:#FAFAFA"></span><span class="shade-n">50</span><span class="shade-hex">#FAFAFA</span></button>
@@ -1405,21 +1438,6 @@
             <button class="shade" data-copy="#404040" title="Copy #404040 · --ct-color-secondary-gray-700"><span class="shade-sw" style="background:#404040"></span><span class="shade-n">700</span><span class="shade-hex">#404040</span></button>
             <button class="shade" data-copy="#262626" title="Copy #262626 · --ct-color-secondary-gray-800"><span class="shade-sw" style="background:#262626"></span><span class="shade-n">800</span><span class="shade-hex">#262626</span></button>
             <button class="shade" data-copy="#171717" title="Copy #171717 · --ct-color-secondary-gray-900"><span class="shade-sw" style="background:#171717"></span><span class="shade-n">900</span><span class="shade-hex">#171717</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Zinc <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FAFAFA" title="Copy #FAFAFA · --ct-color-secondary-zinc-50"><span class="shade-sw" style="background:#FAFAFA"></span><span class="shade-n">50</span><span class="shade-hex">#FAFAFA</span></button>
-            <button class="shade" data-copy="#F4F4F5" title="Copy #F4F4F5 · --ct-color-secondary-zinc-100"><span class="shade-sw" style="background:#F4F4F5"></span><span class="shade-n">100</span><span class="shade-hex">#F4F4F5</span></button>
-            <button class="shade" data-copy="#E4E4E7" title="Copy #E4E4E7 · --ct-color-secondary-zinc-200"><span class="shade-sw" style="background:#E4E4E7"></span><span class="shade-n">200</span><span class="shade-hex">#E4E4E7</span></button>
-            <button class="shade" data-copy="#D4D4D8" title="Copy #D4D4D8 · --ct-color-secondary-zinc-300"><span class="shade-sw" style="background:#D4D4D8"></span><span class="shade-n">300</span><span class="shade-hex">#D4D4D8</span></button>
-            <button class="shade" data-copy="#A1A1AA" title="Copy #A1A1AA · --ct-color-secondary-zinc-400"><span class="shade-sw" style="background:#A1A1AA"></span><span class="shade-n">400</span><span class="shade-hex">#A1A1AA</span></button>
-            <button class="shade" data-copy="#71717A" title="Copy #71717A · --ct-color-secondary-zinc-500"><span class="shade-sw" style="background:#71717A"></span><span class="shade-n">500</span><span class="shade-hex">#71717A</span></button>
-            <button class="shade" data-copy="#52525B" title="Copy #52525B · --ct-color-secondary-zinc-600"><span class="shade-sw" style="background:#52525B"></span><span class="shade-n">600</span><span class="shade-hex">#52525B</span></button>
-            <button class="shade" data-copy="#3F3F46" title="Copy #3F3F46 · --ct-color-secondary-zinc-700"><span class="shade-sw" style="background:#3F3F46"></span><span class="shade-n">700</span><span class="shade-hex">#3F3F46</span></button>
-            <button class="shade" data-copy="#27272A" title="Copy #27272A · --ct-color-secondary-zinc-800"><span class="shade-sw" style="background:#27272A"></span><span class="shade-n">800</span><span class="shade-hex">#27272A</span></button>
-            <button class="shade" data-copy="#18181B" title="Copy #18181B · --ct-color-secondary-zinc-900"><span class="shade-sw" style="background:#18181B"></span><span class="shade-n">900</span><span class="shade-hex">#18181B</span></button>
           </div>
         </div>
         <div class="fam">
@@ -1468,126 +1486,6 @@
             <button class="shade" data-copy="#3B25AE" title="Copy #3B25AE · --ct-color-secondary-indigo-800"><span class="shade-sw" style="background:#3B25AE"></span><span class="shade-n">800</span><span class="shade-hex">#3B25AE</span></button>
             <button class="shade" data-copy="#332689" title="Copy #332689 · --ct-color-secondary-indigo-900"><span class="shade-sw" style="background:#332689"></span><span class="shade-n">900</span><span class="shade-hex">#332689</span></button>
             <button class="shade" data-copy="#1F1650" title="Copy #1F1650 · --ct-color-secondary-indigo-950"><span class="shade-sw" style="background:#1F1650"></span><span class="shade-n">950</span><span class="shade-hex">#1F1650</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Teal <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#F0FDFA" title="Copy #F0FDFA · --ct-color-secondary-teal-50"><span class="shade-sw" style="background:#F0FDFA"></span><span class="shade-n">50</span><span class="shade-hex">#F0FDFA</span></button>
-            <button class="shade" data-copy="#CCFBF1" title="Copy #CCFBF1 · --ct-color-secondary-teal-100"><span class="shade-sw" style="background:#CCFBF1"></span><span class="shade-n">100</span><span class="shade-hex">#CCFBF1</span></button>
-            <button class="shade" data-copy="#99F6E4" title="Copy #99F6E4 · --ct-color-secondary-teal-200"><span class="shade-sw" style="background:#99F6E4"></span><span class="shade-n">200</span><span class="shade-hex">#99F6E4</span></button>
-            <button class="shade" data-copy="#5EEAD4" title="Copy #5EEAD4 · --ct-color-secondary-teal-300"><span class="shade-sw" style="background:#5EEAD4"></span><span class="shade-n">300</span><span class="shade-hex">#5EEAD4</span></button>
-            <button class="shade" data-copy="#2DD4BF" title="Copy #2DD4BF · --ct-color-secondary-teal-400"><span class="shade-sw" style="background:#2DD4BF"></span><span class="shade-n">400</span><span class="shade-hex">#2DD4BF</span></button>
-            <button class="shade" data-copy="#14B8A6" title="Copy #14B8A6 · --ct-color-secondary-teal-500"><span class="shade-sw" style="background:#14B8A6"></span><span class="shade-n">500</span><span class="shade-hex">#14B8A6</span></button>
-            <button class="shade" data-copy="#0D9488" title="Copy #0D9488 · --ct-color-secondary-teal-600"><span class="shade-sw" style="background:#0D9488"></span><span class="shade-n">600</span><span class="shade-hex">#0D9488</span></button>
-            <button class="shade" data-copy="#0F766E" title="Copy #0F766E · --ct-color-secondary-teal-700"><span class="shade-sw" style="background:#0F766E"></span><span class="shade-n">700</span><span class="shade-hex">#0F766E</span></button>
-            <button class="shade" data-copy="#115E59" title="Copy #115E59 · --ct-color-secondary-teal-800"><span class="shade-sw" style="background:#115E59"></span><span class="shade-n">800</span><span class="shade-hex">#115E59</span></button>
-            <button class="shade" data-copy="#134E4A" title="Copy #134E4A · --ct-color-secondary-teal-900"><span class="shade-sw" style="background:#134E4A"></span><span class="shade-n">900</span><span class="shade-hex">#134E4A</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Emerald <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#ECFDF5" title="Copy #ECFDF5 · --ct-color-secondary-emerald-50"><span class="shade-sw" style="background:#ECFDF5"></span><span class="shade-n">50</span><span class="shade-hex">#ECFDF5</span></button>
-            <button class="shade" data-copy="#D1FAE5" title="Copy #D1FAE5 · --ct-color-secondary-emerald-100"><span class="shade-sw" style="background:#D1FAE5"></span><span class="shade-n">100</span><span class="shade-hex">#D1FAE5</span></button>
-            <button class="shade" data-copy="#A7F3D0" title="Copy #A7F3D0 · --ct-color-secondary-emerald-200"><span class="shade-sw" style="background:#A7F3D0"></span><span class="shade-n">200</span><span class="shade-hex">#A7F3D0</span></button>
-            <button class="shade" data-copy="#6EE7B7" title="Copy #6EE7B7 · --ct-color-secondary-emerald-300"><span class="shade-sw" style="background:#6EE7B7"></span><span class="shade-n">300</span><span class="shade-hex">#6EE7B7</span></button>
-            <button class="shade" data-copy="#34D399" title="Copy #34D399 · --ct-color-secondary-emerald-400"><span class="shade-sw" style="background:#34D399"></span><span class="shade-n">400</span><span class="shade-hex">#34D399</span></button>
-            <button class="shade" data-copy="#10B981" title="Copy #10B981 · --ct-color-secondary-emerald-500"><span class="shade-sw" style="background:#10B981"></span><span class="shade-n">500</span><span class="shade-hex">#10B981</span></button>
-            <button class="shade" data-copy="#059669" title="Copy #059669 · --ct-color-secondary-emerald-600"><span class="shade-sw" style="background:#059669"></span><span class="shade-n">600</span><span class="shade-hex">#059669</span></button>
-            <button class="shade" data-copy="#047857" title="Copy #047857 · --ct-color-secondary-emerald-700"><span class="shade-sw" style="background:#047857"></span><span class="shade-n">700</span><span class="shade-hex">#047857</span></button>
-            <button class="shade" data-copy="#065F46" title="Copy #065F46 · --ct-color-secondary-emerald-800"><span class="shade-sw" style="background:#065F46"></span><span class="shade-n">800</span><span class="shade-hex">#065F46</span></button>
-            <button class="shade" data-copy="#064E3B" title="Copy #064E3B · --ct-color-secondary-emerald-900"><span class="shade-sw" style="background:#064E3B"></span><span class="shade-n">900</span><span class="shade-hex">#064E3B</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Cyan <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#ECFEFF" title="Copy #ECFEFF · --ct-color-secondary-cyan-50"><span class="shade-sw" style="background:#ECFEFF"></span><span class="shade-n">50</span><span class="shade-hex">#ECFEFF</span></button>
-            <button class="shade" data-copy="#CFFAFE" title="Copy #CFFAFE · --ct-color-secondary-cyan-100"><span class="shade-sw" style="background:#CFFAFE"></span><span class="shade-n">100</span><span class="shade-hex">#CFFAFE</span></button>
-            <button class="shade" data-copy="#A5F3FC" title="Copy #A5F3FC · --ct-color-secondary-cyan-200"><span class="shade-sw" style="background:#A5F3FC"></span><span class="shade-n">200</span><span class="shade-hex">#A5F3FC</span></button>
-            <button class="shade" data-copy="#67E8F9" title="Copy #67E8F9 · --ct-color-secondary-cyan-300"><span class="shade-sw" style="background:#67E8F9"></span><span class="shade-n">300</span><span class="shade-hex">#67E8F9</span></button>
-            <button class="shade" data-copy="#22D3EE" title="Copy #22D3EE · --ct-color-secondary-cyan-400"><span class="shade-sw" style="background:#22D3EE"></span><span class="shade-n">400</span><span class="shade-hex">#22D3EE</span></button>
-            <button class="shade" data-copy="#06B6D4" title="Copy #06B6D4 · --ct-color-secondary-cyan-500"><span class="shade-sw" style="background:#06B6D4"></span><span class="shade-n">500</span><span class="shade-hex">#06B6D4</span></button>
-            <button class="shade" data-copy="#0891B2" title="Copy #0891B2 · --ct-color-secondary-cyan-600"><span class="shade-sw" style="background:#0891B2"></span><span class="shade-n">600</span><span class="shade-hex">#0891B2</span></button>
-            <button class="shade" data-copy="#0E7490" title="Copy #0E7490 · --ct-color-secondary-cyan-700"><span class="shade-sw" style="background:#0E7490"></span><span class="shade-n">700</span><span class="shade-hex">#0E7490</span></button>
-            <button class="shade" data-copy="#155E75" title="Copy #155E75 · --ct-color-secondary-cyan-800"><span class="shade-sw" style="background:#155E75"></span><span class="shade-n">800</span><span class="shade-hex">#155E75</span></button>
-            <button class="shade" data-copy="#164E63" title="Copy #164E63 · --ct-color-secondary-cyan-900"><span class="shade-sw" style="background:#164E63"></span><span class="shade-n">900</span><span class="shade-hex">#164E63</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Sky <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#F0F9FF" title="Copy #F0F9FF · --ct-color-secondary-sky-50"><span class="shade-sw" style="background:#F0F9FF"></span><span class="shade-n">50</span><span class="shade-hex">#F0F9FF</span></button>
-            <button class="shade" data-copy="#E0F2FE" title="Copy #E0F2FE · --ct-color-secondary-sky-100"><span class="shade-sw" style="background:#E0F2FE"></span><span class="shade-n">100</span><span class="shade-hex">#E0F2FE</span></button>
-            <button class="shade" data-copy="#BAE6FD" title="Copy #BAE6FD · --ct-color-secondary-sky-200"><span class="shade-sw" style="background:#BAE6FD"></span><span class="shade-n">200</span><span class="shade-hex">#BAE6FD</span></button>
-            <button class="shade" data-copy="#7DD3FC" title="Copy #7DD3FC · --ct-color-secondary-sky-300"><span class="shade-sw" style="background:#7DD3FC"></span><span class="shade-n">300</span><span class="shade-hex">#7DD3FC</span></button>
-            <button class="shade" data-copy="#38BDF8" title="Copy #38BDF8 · --ct-color-secondary-sky-400"><span class="shade-sw" style="background:#38BDF8"></span><span class="shade-n">400</span><span class="shade-hex">#38BDF8</span></button>
-            <button class="shade" data-copy="#0EA5E9" title="Copy #0EA5E9 · --ct-color-secondary-sky-500"><span class="shade-sw" style="background:#0EA5E9"></span><span class="shade-n">500</span><span class="shade-hex">#0EA5E9</span></button>
-            <button class="shade" data-copy="#0284C7" title="Copy #0284C7 · --ct-color-secondary-sky-600"><span class="shade-sw" style="background:#0284C7"></span><span class="shade-n">600</span><span class="shade-hex">#0284C7</span></button>
-            <button class="shade" data-copy="#0369A1" title="Copy #0369A1 · --ct-color-secondary-sky-700"><span class="shade-sw" style="background:#0369A1"></span><span class="shade-n">700</span><span class="shade-hex">#0369A1</span></button>
-            <button class="shade" data-copy="#075985" title="Copy #075985 · --ct-color-secondary-sky-800"><span class="shade-sw" style="background:#075985"></span><span class="shade-n">800</span><span class="shade-hex">#075985</span></button>
-            <button class="shade" data-copy="#0C4A6E" title="Copy #0C4A6E · --ct-color-secondary-sky-900"><span class="shade-sw" style="background:#0C4A6E"></span><span class="shade-n">900</span><span class="shade-hex">#0C4A6E</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Violet <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#F5F3FF" title="Copy #F5F3FF · --ct-color-secondary-violet-50"><span class="shade-sw" style="background:#F5F3FF"></span><span class="shade-n">50</span><span class="shade-hex">#F5F3FF</span></button>
-            <button class="shade" data-copy="#EDE9FE" title="Copy #EDE9FE · --ct-color-secondary-violet-100"><span class="shade-sw" style="background:#EDE9FE"></span><span class="shade-n">100</span><span class="shade-hex">#EDE9FE</span></button>
-            <button class="shade" data-copy="#DDD6FE" title="Copy #DDD6FE · --ct-color-secondary-violet-200"><span class="shade-sw" style="background:#DDD6FE"></span><span class="shade-n">200</span><span class="shade-hex">#DDD6FE</span></button>
-            <button class="shade" data-copy="#C4B5FD" title="Copy #C4B5FD · --ct-color-secondary-violet-300"><span class="shade-sw" style="background:#C4B5FD"></span><span class="shade-n">300</span><span class="shade-hex">#C4B5FD</span></button>
-            <button class="shade" data-copy="#A78BFA" title="Copy #A78BFA · --ct-color-secondary-violet-400"><span class="shade-sw" style="background:#A78BFA"></span><span class="shade-n">400</span><span class="shade-hex">#A78BFA</span></button>
-            <button class="shade" data-copy="#8B5CF6" title="Copy #8B5CF6 · --ct-color-secondary-violet-500"><span class="shade-sw" style="background:#8B5CF6"></span><span class="shade-n">500</span><span class="shade-hex">#8B5CF6</span></button>
-            <button class="shade" data-copy="#7C3AED" title="Copy #7C3AED · --ct-color-secondary-violet-600"><span class="shade-sw" style="background:#7C3AED"></span><span class="shade-n">600</span><span class="shade-hex">#7C3AED</span></button>
-            <button class="shade" data-copy="#6D28D9" title="Copy #6D28D9 · --ct-color-secondary-violet-700"><span class="shade-sw" style="background:#6D28D9"></span><span class="shade-n">700</span><span class="shade-hex">#6D28D9</span></button>
-            <button class="shade" data-copy="#5B21B6" title="Copy #5B21B6 · --ct-color-secondary-violet-800"><span class="shade-sw" style="background:#5B21B6"></span><span class="shade-n">800</span><span class="shade-hex">#5B21B6</span></button>
-            <button class="shade" data-copy="#4C1D95" title="Copy #4C1D95 · --ct-color-secondary-violet-900"><span class="shade-sw" style="background:#4C1D95"></span><span class="shade-n">900</span><span class="shade-hex">#4C1D95</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Fuchsia <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FDF4FF" title="Copy #FDF4FF · --ct-color-secondary-fuchsia-50"><span class="shade-sw" style="background:#FDF4FF"></span><span class="shade-n">50</span><span class="shade-hex">#FDF4FF</span></button>
-            <button class="shade" data-copy="#FAE8FF" title="Copy #FAE8FF · --ct-color-secondary-fuchsia-100"><span class="shade-sw" style="background:#FAE8FF"></span><span class="shade-n">100</span><span class="shade-hex">#FAE8FF</span></button>
-            <button class="shade" data-copy="#F5D0FE" title="Copy #F5D0FE · --ct-color-secondary-fuchsia-200"><span class="shade-sw" style="background:#F5D0FE"></span><span class="shade-n">200</span><span class="shade-hex">#F5D0FE</span></button>
-            <button class="shade" data-copy="#F0ABFC" title="Copy #F0ABFC · --ct-color-secondary-fuchsia-300"><span class="shade-sw" style="background:#F0ABFC"></span><span class="shade-n">300</span><span class="shade-hex">#F0ABFC</span></button>
-            <button class="shade" data-copy="#E879F9" title="Copy #E879F9 · --ct-color-secondary-fuchsia-400"><span class="shade-sw" style="background:#E879F9"></span><span class="shade-n">400</span><span class="shade-hex">#E879F9</span></button>
-            <button class="shade" data-copy="#D946EF" title="Copy #D946EF · --ct-color-secondary-fuchsia-500"><span class="shade-sw" style="background:#D946EF"></span><span class="shade-n">500</span><span class="shade-hex">#D946EF</span></button>
-            <button class="shade" data-copy="#C026D3" title="Copy #C026D3 · --ct-color-secondary-fuchsia-600"><span class="shade-sw" style="background:#C026D3"></span><span class="shade-n">600</span><span class="shade-hex">#C026D3</span></button>
-            <button class="shade" data-copy="#A21CAF" title="Copy #A21CAF · --ct-color-secondary-fuchsia-700"><span class="shade-sw" style="background:#A21CAF"></span><span class="shade-n">700</span><span class="shade-hex">#A21CAF</span></button>
-            <button class="shade" data-copy="#86198F" title="Copy #86198F · --ct-color-secondary-fuchsia-800"><span class="shade-sw" style="background:#86198F"></span><span class="shade-n">800</span><span class="shade-hex">#86198F</span></button>
-            <button class="shade" data-copy="#701A75" title="Copy #701A75 · --ct-color-secondary-fuchsia-900"><span class="shade-sw" style="background:#701A75"></span><span class="shade-n">900</span><span class="shade-hex">#701A75</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Pink <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FDF2F8" title="Copy #FDF2F8 · --ct-color-secondary-pink-50"><span class="shade-sw" style="background:#FDF2F8"></span><span class="shade-n">50</span><span class="shade-hex">#FDF2F8</span></button>
-            <button class="shade" data-copy="#FCE7F3" title="Copy #FCE7F3 · --ct-color-secondary-pink-100"><span class="shade-sw" style="background:#FCE7F3"></span><span class="shade-n">100</span><span class="shade-hex">#FCE7F3</span></button>
-            <button class="shade" data-copy="#FBCFE8" title="Copy #FBCFE8 · --ct-color-secondary-pink-200"><span class="shade-sw" style="background:#FBCFE8"></span><span class="shade-n">200</span><span class="shade-hex">#FBCFE8</span></button>
-            <button class="shade" data-copy="#F9A8D4" title="Copy #F9A8D4 · --ct-color-secondary-pink-300"><span class="shade-sw" style="background:#F9A8D4"></span><span class="shade-n">300</span><span class="shade-hex">#F9A8D4</span></button>
-            <button class="shade" data-copy="#F472B6" title="Copy #F472B6 · --ct-color-secondary-pink-400"><span class="shade-sw" style="background:#F472B6"></span><span class="shade-n">400</span><span class="shade-hex">#F472B6</span></button>
-            <button class="shade" data-copy="#EC4899" title="Copy #EC4899 · --ct-color-secondary-pink-500"><span class="shade-sw" style="background:#EC4899"></span><span class="shade-n">500</span><span class="shade-hex">#EC4899</span></button>
-            <button class="shade" data-copy="#DB2777" title="Copy #DB2777 · --ct-color-secondary-pink-600"><span class="shade-sw" style="background:#DB2777"></span><span class="shade-n">600</span><span class="shade-hex">#DB2777</span></button>
-            <button class="shade" data-copy="#BE185D" title="Copy #BE185D · --ct-color-secondary-pink-700"><span class="shade-sw" style="background:#BE185D"></span><span class="shade-n">700</span><span class="shade-hex">#BE185D</span></button>
-            <button class="shade" data-copy="#9D174D" title="Copy #9D174D · --ct-color-secondary-pink-800"><span class="shade-sw" style="background:#9D174D"></span><span class="shade-n">800</span><span class="shade-hex">#9D174D</span></button>
-            <button class="shade" data-copy="#831843" title="Copy #831843 · --ct-color-secondary-pink-900"><span class="shade-sw" style="background:#831843"></span><span class="shade-n">900</span><span class="shade-hex">#831843</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Secondary / Rose <span>10</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FFF1F2" title="Copy #FFF1F2 · --ct-color-secondary-rose-50"><span class="shade-sw" style="background:#FFF1F2"></span><span class="shade-n">50</span><span class="shade-hex">#FFF1F2</span></button>
-            <button class="shade" data-copy="#FFE4E6" title="Copy #FFE4E6 · --ct-color-secondary-rose-100"><span class="shade-sw" style="background:#FFE4E6"></span><span class="shade-n">100</span><span class="shade-hex">#FFE4E6</span></button>
-            <button class="shade" data-copy="#FECDD3" title="Copy #FECDD3 · --ct-color-secondary-rose-200"><span class="shade-sw" style="background:#FECDD3"></span><span class="shade-n">200</span><span class="shade-hex">#FECDD3</span></button>
-            <button class="shade" data-copy="#FDA4AF" title="Copy #FDA4AF · --ct-color-secondary-rose-300"><span class="shade-sw" style="background:#FDA4AF"></span><span class="shade-n">300</span><span class="shade-hex">#FDA4AF</span></button>
-            <button class="shade" data-copy="#FB7185" title="Copy #FB7185 · --ct-color-secondary-rose-400"><span class="shade-sw" style="background:#FB7185"></span><span class="shade-n">400</span><span class="shade-hex">#FB7185</span></button>
-            <button class="shade" data-copy="#F43F5E" title="Copy #F43F5E · --ct-color-secondary-rose-500"><span class="shade-sw" style="background:#F43F5E"></span><span class="shade-n">500</span><span class="shade-hex">#F43F5E</span></button>
-            <button class="shade" data-copy="#E11D48" title="Copy #E11D48 · --ct-color-secondary-rose-600"><span class="shade-sw" style="background:#E11D48"></span><span class="shade-n">600</span><span class="shade-hex">#E11D48</span></button>
-            <button class="shade" data-copy="#BE123C" title="Copy #BE123C · --ct-color-secondary-rose-700"><span class="shade-sw" style="background:#BE123C"></span><span class="shade-n">700</span><span class="shade-hex">#BE123C</span></button>
-            <button class="shade" data-copy="#9F1239" title="Copy #9F1239 · --ct-color-secondary-rose-800"><span class="shade-sw" style="background:#9F1239"></span><span class="shade-n">800</span><span class="shade-hex">#9F1239</span></button>
-            <button class="shade" data-copy="#881337" title="Copy #881337 · --ct-color-secondary-rose-900"><span class="shade-sw" style="background:#881337"></span><span class="shade-n">900</span><span class="shade-hex">#881337</span></button>
           </div>
         </div>
         <div class="fam">
@@ -1657,34 +1555,6 @@
           </div>
         </div>
         <div class="fam">
-          <h3>Purple <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#E4D6FF" title="Copy #E4D6FF · --ct-color-purple-100"><span class="shade-sw" style="background:#E4D6FF"></span><span class="shade-n">100</span><span class="shade-hex">#E4D6FF</span></button>
-            <button class="shade" data-copy="#C9ADFF" title="Copy #C9ADFF · --ct-color-purple-200"><span class="shade-sw" style="background:#C9ADFF"></span><span class="shade-n">200</span><span class="shade-hex">#C9ADFF</span></button>
-            <button class="shade" data-copy="#AD85FF" title="Copy #AD85FF · --ct-color-purple-300"><span class="shade-sw" style="background:#AD85FF"></span><span class="shade-n">300</span><span class="shade-hex">#AD85FF</span></button>
-            <button class="shade" data-copy="#925CFF" title="Copy #925CFF · --ct-color-purple-400"><span class="shade-sw" style="background:#925CFF"></span><span class="shade-n">400</span><span class="shade-hex">#925CFF</span></button>
-            <button class="shade" data-copy="#7733FF" title="Copy #7733FF · --ct-color-purple-500"><span class="shade-sw" style="background:#7733FF"></span><span class="shade-n">500</span><span class="shade-hex">#7733FF</span></button>
-            <button class="shade" data-copy="#5F29CC" title="Copy #5F29CC · --ct-color-purple-600"><span class="shade-sw" style="background:#5F29CC"></span><span class="shade-n">600</span><span class="shade-hex">#5F29CC</span></button>
-            <button class="shade" data-copy="#471F99" title="Copy #471F99 · --ct-color-purple-700"><span class="shade-sw" style="background:#471F99"></span><span class="shade-n">700</span><span class="shade-hex">#471F99</span></button>
-            <button class="shade" data-copy="#301466" title="Copy #301466 · --ct-color-purple-800"><span class="shade-sw" style="background:#301466"></span><span class="shade-n">800</span><span class="shade-hex">#301466</span></button>
-            <button class="shade" data-copy="#180A33" title="Copy #180A33 · --ct-color-purple-900"><span class="shade-sw" style="background:#180A33"></span><span class="shade-n">900</span><span class="shade-hex">#180A33</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Violet <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#F1D6FF" title="Copy #F1D6FF · --ct-color-violet-100"><span class="shade-sw" style="background:#F1D6FF"></span><span class="shade-n">100</span><span class="shade-hex">#F1D6FF</span></button>
-            <button class="shade" data-copy="#E4ADFF" title="Copy #E4ADFF · --ct-color-violet-200"><span class="shade-sw" style="background:#E4ADFF"></span><span class="shade-n">200</span><span class="shade-hex">#E4ADFF</span></button>
-            <button class="shade" data-copy="#D685FF" title="Copy #D685FF · --ct-color-violet-300"><span class="shade-sw" style="background:#D685FF"></span><span class="shade-n">300</span><span class="shade-hex">#D685FF</span></button>
-            <button class="shade" data-copy="#C95CFF" title="Copy #C95CFF · --ct-color-violet-400"><span class="shade-sw" style="background:#C95CFF"></span><span class="shade-n">400</span><span class="shade-hex">#C95CFF</span></button>
-            <button class="shade" data-copy="#BB33FF" title="Copy #BB33FF · --ct-color-violet-500"><span class="shade-sw" style="background:#BB33FF"></span><span class="shade-n">500</span><span class="shade-hex">#BB33FF</span></button>
-            <button class="shade" data-copy="#9629CC" title="Copy #9629CC · --ct-color-violet-600"><span class="shade-sw" style="background:#9629CC"></span><span class="shade-n">600</span><span class="shade-hex">#9629CC</span></button>
-            <button class="shade" data-copy="#701F99" title="Copy #701F99 · --ct-color-violet-700"><span class="shade-sw" style="background:#701F99"></span><span class="shade-n">700</span><span class="shade-hex">#701F99</span></button>
-            <button class="shade" data-copy="#4B1466" title="Copy #4B1466 · --ct-color-violet-800"><span class="shade-sw" style="background:#4B1466"></span><span class="shade-n">800</span><span class="shade-hex">#4B1466</span></button>
-            <button class="shade" data-copy="#250A33" title="Copy #250A33 · --ct-color-violet-900"><span class="shade-sw" style="background:#250A33"></span><span class="shade-n">900</span><span class="shade-hex">#250A33</span></button>
-          </div>
-        </div>
-        <div class="fam">
           <h3>Red <span>9</span></h3>
           <div class="shade-row">
             <button class="shade" data-copy="#FACCCC" title="Copy #FACCCC · --ct-color-red-100"><span class="shade-sw" style="background:#FACCCC"></span><span class="shade-n">100</span><span class="shade-hex">#FACCCC</span></button>
@@ -1696,48 +1566,6 @@
             <button class="shade" data-copy="#890000" title="Copy #890000 · --ct-color-red-700"><span class="shade-sw" style="background:#890000"></span><span class="shade-n">700</span><span class="shade-hex">#890000</span></button>
             <button class="shade" data-copy="#5C0000" title="Copy #5C0000 · --ct-color-red-800"><span class="shade-sw" style="background:#5C0000"></span><span class="shade-n">800</span><span class="shade-hex">#5C0000</span></button>
             <button class="shade" data-copy="#2E0000" title="Copy #2E0000 · --ct-color-red-900"><span class="shade-sw" style="background:#2E0000"></span><span class="shade-n">900</span><span class="shade-hex">#2E0000</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Pink <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FFD6DD" title="Copy #FFD6DD · --ct-color-pink-100"><span class="shade-sw" style="background:#FFD6DD"></span><span class="shade-n">100</span><span class="shade-hex">#FFD6DD</span></button>
-            <button class="shade" data-copy="#FFADBB" title="Copy #FFADBB · --ct-color-pink-200"><span class="shade-sw" style="background:#FFADBB"></span><span class="shade-n">200</span><span class="shade-hex">#FFADBB</span></button>
-            <button class="shade" data-copy="#FF8599" title="Copy #FF8599 · --ct-color-pink-300"><span class="shade-sw" style="background:#FF8599"></span><span class="shade-n">300</span><span class="shade-hex">#FF8599</span></button>
-            <button class="shade" data-copy="#FF5C77" title="Copy #FF5C77 · --ct-color-pink-400"><span class="shade-sw" style="background:#FF5C77"></span><span class="shade-n">400</span><span class="shade-hex">#FF5C77</span></button>
-            <button class="shade" data-copy="#FF3355" title="Copy #FF3355 · --ct-color-pink-500"><span class="shade-sw" style="background:#FF3355"></span><span class="shade-n">500</span><span class="shade-hex">#FF3355</span></button>
-            <button class="shade" data-copy="#CC2944" title="Copy #CC2944 · --ct-color-pink-600"><span class="shade-sw" style="background:#CC2944"></span><span class="shade-n">600</span><span class="shade-hex">#CC2944</span></button>
-            <button class="shade" data-copy="#991F33" title="Copy #991F33 · --ct-color-pink-700"><span class="shade-sw" style="background:#991F33"></span><span class="shade-n">700</span><span class="shade-hex">#991F33</span></button>
-            <button class="shade" data-copy="#661422" title="Copy #661422 · --ct-color-pink-800"><span class="shade-sw" style="background:#661422"></span><span class="shade-n">800</span><span class="shade-hex">#661422</span></button>
-            <button class="shade" data-copy="#330A11" title="Copy #330A11 · --ct-color-pink-900"><span class="shade-sw" style="background:#330A11"></span><span class="shade-n">900</span><span class="shade-hex">#330A11</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Orange <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FFE6CC" title="Copy #FFE6CC · --ct-color-orange-100"><span class="shade-sw" style="background:#FFE6CC"></span><span class="shade-n">100</span><span class="shade-hex">#FFE6CC</span></button>
-            <button class="shade" data-copy="#FFCC99" title="Copy #FFCC99 · --ct-color-orange-200"><span class="shade-sw" style="background:#FFCC99"></span><span class="shade-n">200</span><span class="shade-hex">#FFCC99</span></button>
-            <button class="shade" data-copy="#FFB366" title="Copy #FFB366 · --ct-color-orange-300"><span class="shade-sw" style="background:#FFB366"></span><span class="shade-n">300</span><span class="shade-hex">#FFB366</span></button>
-            <button class="shade" data-copy="#FF9933" title="Copy #FF9933 · --ct-color-orange-400"><span class="shade-sw" style="background:#FF9933"></span><span class="shade-n">400</span><span class="shade-hex">#FF9933</span></button>
-            <button class="shade" data-copy="#FF8000" title="Copy #FF8000 · --ct-color-orange-500"><span class="shade-sw" style="background:#FF8000"></span><span class="shade-n">500</span><span class="shade-hex">#FF8000</span></button>
-            <button class="shade" data-copy="#CC6600" title="Copy #CC6600 · --ct-color-orange-600"><span class="shade-sw" style="background:#CC6600"></span><span class="shade-n">600</span><span class="shade-hex">#CC6600</span></button>
-            <button class="shade" data-copy="#994D00" title="Copy #994D00 · --ct-color-orange-700"><span class="shade-sw" style="background:#994D00"></span><span class="shade-n">700</span><span class="shade-hex">#994D00</span></button>
-            <button class="shade" data-copy="#663300" title="Copy #663300 · --ct-color-orange-800"><span class="shade-sw" style="background:#663300"></span><span class="shade-n">800</span><span class="shade-hex">#663300</span></button>
-            <button class="shade" data-copy="#331A00" title="Copy #331A00 · --ct-color-orange-900"><span class="shade-sw" style="background:#331A00"></span><span class="shade-n">900</span><span class="shade-hex">#331A00</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Yellow <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#FFF5CC" title="Copy #FFF5CC · --ct-color-yellow-100"><span class="shade-sw" style="background:#FFF5CC"></span><span class="shade-n">100</span><span class="shade-hex">#FFF5CC</span></button>
-            <button class="shade" data-copy="#FFEB99" title="Copy #FFEB99 · --ct-color-yellow-200"><span class="shade-sw" style="background:#FFEB99"></span><span class="shade-n">200</span><span class="shade-hex">#FFEB99</span></button>
-            <button class="shade" data-copy="#FFE066" title="Copy #FFE066 · --ct-color-yellow-300"><span class="shade-sw" style="background:#FFE066"></span><span class="shade-n">300</span><span class="shade-hex">#FFE066</span></button>
-            <button class="shade" data-copy="#FFD633" title="Copy #FFD633 · --ct-color-yellow-400"><span class="shade-sw" style="background:#FFD633"></span><span class="shade-n">400</span><span class="shade-hex">#FFD633</span></button>
-            <button class="shade" data-copy="#FFCC00" title="Copy #FFCC00 · --ct-color-yellow-500"><span class="shade-sw" style="background:#FFCC00"></span><span class="shade-n">500</span><span class="shade-hex">#FFCC00</span></button>
-            <button class="shade" data-copy="#CCA300" title="Copy #CCA300 · --ct-color-yellow-600"><span class="shade-sw" style="background:#CCA300"></span><span class="shade-n">600</span><span class="shade-hex">#CCA300</span></button>
-            <button class="shade" data-copy="#997A00" title="Copy #997A00 · --ct-color-yellow-700"><span class="shade-sw" style="background:#997A00"></span><span class="shade-n">700</span><span class="shade-hex">#997A00</span></button>
-            <button class="shade" data-copy="#665200" title="Copy #665200 · --ct-color-yellow-800"><span class="shade-sw" style="background:#665200"></span><span class="shade-n">800</span><span class="shade-hex">#665200</span></button>
-            <button class="shade" data-copy="#332900" title="Copy #332900 · --ct-color-yellow-900"><span class="shade-sw" style="background:#332900"></span><span class="shade-n">900</span><span class="shade-hex">#332900</span></button>
           </div>
         </div>
         <div class="fam">
@@ -1766,34 +1594,6 @@
             <button class="shade" data-copy="#482AD8" title="Copy #482AD8 · --ct-color-indigo-700"><span class="shade-sw" style="background:#482AD8"></span><span class="shade-n">700</span><span class="shade-hex">#482AD8</span></button>
             <button class="shade" data-copy="#3B25AE" title="Copy #3B25AE · --ct-color-indigo-800"><span class="shade-sw" style="background:#3B25AE"></span><span class="shade-n">800</span><span class="shade-hex">#3B25AE</span></button>
             <button class="shade" data-copy="#332689" title="Copy #332689 · --ct-color-indigo-900"><span class="shade-sw" style="background:#332689"></span><span class="shade-n">900</span><span class="shade-hex">#332689</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Teal <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#CCF5F5" title="Copy #CCF5F5 · --ct-color-teal-100"><span class="shade-sw" style="background:#CCF5F5"></span><span class="shade-n">100</span><span class="shade-hex">#CCF5F5</span></button>
-            <button class="shade" data-copy="#99EBEB" title="Copy #99EBEB · --ct-color-teal-200"><span class="shade-sw" style="background:#99EBEB"></span><span class="shade-n">200</span><span class="shade-hex">#99EBEB</span></button>
-            <button class="shade" data-copy="#66E0E0" title="Copy #66E0E0 · --ct-color-teal-300"><span class="shade-sw" style="background:#66E0E0"></span><span class="shade-n">300</span><span class="shade-hex">#66E0E0</span></button>
-            <button class="shade" data-copy="#33D6D6" title="Copy #33D6D6 · --ct-color-teal-400"><span class="shade-sw" style="background:#33D6D6"></span><span class="shade-n">400</span><span class="shade-hex">#33D6D6</span></button>
-            <button class="shade" data-copy="#00CCCC" title="Copy #00CCCC · --ct-color-teal-500"><span class="shade-sw" style="background:#00CCCC"></span><span class="shade-n">500</span><span class="shade-hex">#00CCCC</span></button>
-            <button class="shade" data-copy="#00A3A3" title="Copy #00A3A3 · --ct-color-teal-600"><span class="shade-sw" style="background:#00A3A3"></span><span class="shade-n">600</span><span class="shade-hex">#00A3A3</span></button>
-            <button class="shade" data-copy="#007A7A" title="Copy #007A7A · --ct-color-teal-700"><span class="shade-sw" style="background:#007A7A"></span><span class="shade-n">700</span><span class="shade-hex">#007A7A</span></button>
-            <button class="shade" data-copy="#005252" title="Copy #005252 · --ct-color-teal-800"><span class="shade-sw" style="background:#005252"></span><span class="shade-n">800</span><span class="shade-hex">#005252</span></button>
-            <button class="shade" data-copy="#002929" title="Copy #002929 · --ct-color-teal-900"><span class="shade-sw" style="background:#002929"></span><span class="shade-n">900</span><span class="shade-hex">#002929</span></button>
-          </div>
-        </div>
-        <div class="fam">
-          <h3>Cyan <span>9</span></h3>
-          <div class="shade-row">
-            <button class="shade" data-copy="#CCEEFF" title="Copy #CCEEFF · --ct-color-cyan-100"><span class="shade-sw" style="background:#CCEEFF"></span><span class="shade-n">100</span><span class="shade-hex">#CCEEFF</span></button>
-            <button class="shade" data-copy="#99DDFF" title="Copy #99DDFF · --ct-color-cyan-200"><span class="shade-sw" style="background:#99DDFF"></span><span class="shade-n">200</span><span class="shade-hex">#99DDFF</span></button>
-            <button class="shade" data-copy="#66CCFF" title="Copy #66CCFF · --ct-color-cyan-300"><span class="shade-sw" style="background:#66CCFF"></span><span class="shade-n">300</span><span class="shade-hex">#66CCFF</span></button>
-            <button class="shade" data-copy="#33BBFF" title="Copy #33BBFF · --ct-color-cyan-400"><span class="shade-sw" style="background:#33BBFF"></span><span class="shade-n">400</span><span class="shade-hex">#33BBFF</span></button>
-            <button class="shade" data-copy="#00AAFF" title="Copy #00AAFF · --ct-color-cyan-500"><span class="shade-sw" style="background:#00AAFF"></span><span class="shade-n">500</span><span class="shade-hex">#00AAFF</span></button>
-            <button class="shade" data-copy="#0088CC" title="Copy #0088CC · --ct-color-cyan-600"><span class="shade-sw" style="background:#0088CC"></span><span class="shade-n">600</span><span class="shade-hex">#0088CC</span></button>
-            <button class="shade" data-copy="#006699" title="Copy #006699 · --ct-color-cyan-700"><span class="shade-sw" style="background:#006699"></span><span class="shade-n">700</span><span class="shade-hex">#006699</span></button>
-            <button class="shade" data-copy="#004466" title="Copy #004466 · --ct-color-cyan-800"><span class="shade-sw" style="background:#004466"></span><span class="shade-n">800</span><span class="shade-hex">#004466</span></button>
-            <button class="shade" data-copy="#002233" title="Copy #002233 · --ct-color-cyan-900"><span class="shade-sw" style="background:#002233"></span><span class="shade-n">900</span><span class="shade-hex">#002233</span></button>
           </div>
         </div>
     </section>
