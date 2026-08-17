@@ -4,7 +4,7 @@
    lightbox are all hand-rolled so the page works from a plain file:// open. */
 
 const ROUTES = [
-  'overview', 'logo', 'color', 'typography', 'spacing', 'shadows', 'layout', 'icons', 'components',
+  'overview', 'brand-overview', 'logo', 'color', 'typography', 'spacing', 'shadows', 'layout', 'icons', 'illustrations', 'pattern', 'components',
   'motion', 'accessibility',
   'tokens', 'tokens-primitives', 'tokens-semantics', 'tokens-typography',
   'tokens-spacing', 'tokens-border', 'tokens-layout',
