@@ -44,7 +44,7 @@
     <div class="nav-sec" data-routes="overview brand-overview">
       <button class="nav-group" aria-expanded="true" aria-controls="navsec-get-started"><span>Get started</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="nav-items" id="navsec-get-started">
-        <a href="#overview" data-route="overview">Overview</a>
+        <a href="#overview" data-route="overview">At a Glance</a>
         <a href="#brand-overview" data-route="brand-overview">Brand Overview<span class="wip wip--sm">WIP</span></a>
       </div>
     </div>
@@ -63,7 +63,6 @@
         <a href="#components" data-route="components">Components<span class="wip wip--sm">WIP</span></a>
         <a href="#motion" data-route="motion">Motion</a>
         <a href="#accessibility" data-route="accessibility">Accessibility</a>
-        <span class="nav-soon" aria-disabled="true">Tone of Voice<span class="soon">Upcoming</span></span>
         <span class="nav-soon" aria-disabled="true">Photography<span class="soon">Upcoming</span></span>
         <span class="nav-soon" aria-disabled="true">Expressions<span class="soon">Upcoming</span></span>
       </div>
@@ -97,13 +96,12 @@
   <!-- ---------- OVERVIEW ---------- -->
   <article class="view" id="view-overview">
     <header class="doc-head">
-      <h1>Cleartax Design System</h1>
+      <h1>At a Glance</h1>
       <p class="doc-lead">Quality foundations and a small, deliberate set of brand elements, so everything we ship looks like it came from the same place. Navy and off-white do the heavy lifting; lime and violet earn their moments.</p>
     </header>
     <section class="doc-block">
       <h2>Browse the system</h2>
       <div class="topic-grid">
-          <a class="topic-card" href="#brand-overview" data-route="brand-overview"><span class="topic-card-title">Brand Overview<span class="wip wip--sm">WIP</span></span><span class="topic-card-note">Purpose, mission, vision, promise, positioning, audience, values, personality, attributes and tone of voice.</span></a>
           <a class="topic-card" href="#logo" data-route="logo"><span class="topic-card-title">Logo</span><span class="topic-card-note">Construction at 218×50, clear space in x, colourways with measured ratios, the isotype, and every don't.</span></a>
           <a class="topic-card" href="#color" data-route="color"><span class="topic-card-title">Color</span><span class="topic-card-note">The four-colour story, the 60/25/10/5 ratio, full ramps and states, and measured pairings to use and avoid.</span></a>
           <a class="topic-card" href="#typography" data-route="typography"><span class="topic-card-title">Typography</span><span class="topic-card-note">Why two families, the full desktop and mobile scale, the in-use spec table, and accessible text pairings.</span></a>
@@ -117,7 +115,6 @@
           <a class="topic-card" href="#tokens" data-route="tokens"><span class="topic-card-title">Design tokens</span><span class="topic-card-note">526 tokens as CSS, SCSS, JS, and JSON, the values behind everything here.</span></a>
           <a class="topic-card" href="#motion" data-route="motion"><span class="topic-card-title">Motion</span><span class="topic-card-note">The exact durations and easings this site's own transitions run on.</span></a>
           <a class="topic-card" href="#accessibility" data-route="accessibility"><span class="topic-card-title">Accessibility</span><span class="topic-card-note">Colour accessibility with measured ratios, focus and alt-text rules for developers, and the do's and don'ts.</span></a>
-          <span class="topic-card topic-card--soon" aria-disabled="true"><span class="topic-card-title">Tone of Voice<span class="soon">Upcoming</span></span><span class="topic-card-note">How we write. Principles, register, and the words that place us.</span></span>
           <span class="topic-card topic-card--soon" aria-disabled="true"><span class="topic-card-title">Photography<span class="soon">Upcoming</span></span><span class="topic-card-note">Subject, treatment, and how imagery is cropped and colour graded.</span></span>
           <span class="topic-card topic-card--soon" aria-disabled="true"><span class="topic-card-title">Expressions<span class="soon">Upcoming</span></span><span class="topic-card-note">The broader visual expressions built on top of the core system.</span></span>
           <a class="topic-card" href="#applications" data-route="applications"><span class="topic-card-title">Applications<span class="wip wip--sm">WIP</span></span><span class="topic-card-note">Decks, social, sales assets and merchandise, the system in real output.</span></a>
@@ -3011,7 +3008,7 @@
           <button class="app-card" onclick="openGallery('merch')" aria-haspopup="dialog">
             <div class="app-card-media">
               <img src="assets/applications/merch-01.jpg" alt="Preview of Merchandise" loading="lazy">
-              <span class="app-card-badge">10 items</span>
+              <span class="app-card-badge">9 items</span>
             </div>
             <div class="figure-cap"><span class="cap-title">Merchandise</span><span class="cap-note">Apparel, drinkware, packaging, and event collateral carrying the dot-grid motif.</span></div>
           </button>
@@ -3271,8 +3268,7 @@ window.GALLERIES = {
     "assets/applications/merch-06.jpg",
     "assets/applications/merch-07.jpg",
     "assets/applications/merch-08.jpg",
-    "assets/applications/merch-09.jpg",
-    "assets/applications/merch-10.jpg"
+    "assets/applications/merch-09.jpg"
   ]
 };
 /* per-category token data, inlined because fetch() is blocked on file:// */
