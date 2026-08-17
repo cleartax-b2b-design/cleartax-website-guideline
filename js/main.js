@@ -8,7 +8,7 @@ const ROUTES = [
   'motion', 'accessibility',
   'tokens', 'tokens-primitives', 'tokens-semantics', 'tokens-typography',
   'tokens-spacing', 'tokens-border', 'tokens-layout',
-  'usage',
+  'applications', 'usage',
 ];
 
 const HAS_GSAP = () => typeof window.gsap !== 'undefined';
