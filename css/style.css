@@ -1134,6 +1134,9 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
 .wip--md{font-size:12px;line-height:1;padding:5px 10px;margin-left:12px;
   position:relative;top:-4px;}
 .sidebar-nav a{display:flex;align-items:center;}
+/* display:flex above beats the UA [hidden] rule, so the nav filter could set
+   hidden without anything disappearing. Both selectors need the override. */
+.sidebar-nav a[hidden]{display:none !important;}
 .doc-head h1{display:flex;align-items:center;flex-wrap:wrap;}
 
 /* Upcoming pill: neutral grey, deliberately quieter than the orange WIP.
@@ -1145,6 +1148,8 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
 .nav-soon{display:flex;align-items:center;font-size:14px;font-weight:500;color:var(--muted);
   padding:7px 10px;border-radius:7px;cursor:not-allowed;opacity:.65;user-select:none;}
 .nav-soon:hover{background:none;}
+/* display:flex would beat the UA [hidden] rule, so the search could not hide these */
+.nav-soon[hidden]{display:none !important;}
 
 /* Brand Overview page */
 .pair-grid--voice{margin-top:14px;max-width:760px;}

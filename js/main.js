@@ -203,15 +203,58 @@ function initNavSearch() {
   const empty = document.getElementById('navEmpty');
   if (!input || !nav) return;
 
+  /* Extra terms per route so a search matches what a page is about, not only
+     its label. "colour", "font", "contrast", "ramp", "merch" all used to miss. */
+  const ALIAS = {
+    overview: 'home start index',
+    'brand-overview': 'purpose mission vision promise positioning audience values personality attributes tone voice',
+    logo: 'wordmark isotype mark lockup clearspace favicon merch',
+    color: 'colour palette ramp hex contrast swatch pairing',
+    typography: 'type font families inter tight google sans scale heading paragraph label',
+    spacing: 'space gap padding margin rhythm 4px',
+    layout: 'grid columns gutter margin breakpoint responsive',
+    shadows: 'shadow blur elevation depth backdrop effect',
+    motion: 'animation easing duration transition curve',
+    accessibility: 'a11y contrast wcag focus alt text ratio',
+    components: 'button badge breadcrumb field alert card input',
+    icons: 'iconography symbol glyph stroke pictogram',
+    illustrations: 'illustration isometric drawing style',
+    pattern: 'patterns dots grid background texture',
+    tokens: 'token variables css scss json export',
+    'tokens-primitives': 'primitive ramp raw palette hex',
+    'tokens-semantics': 'semantic alias role surface content border',
+    'tokens-typography': 'type token font size weight line height',
+    'tokens-spacing': 'space token scale',
+    'tokens-border': 'border radius corner stroke width',
+    'tokens-layout': 'layout token container breakpoint',
+    applications: 'deck social sales merch merchandise print web output collateral',
+    usage: 'prototype website live rebrand',
+  };
+  const ALIAS_SOON = {
+    'photography': 'photo image imagery treatment crop grade',
+    'expression': 'expressions art direction range look feel composition mood',
+  };
+
+  /* The label without any status pill, plus its aliases. */
+  function haystack(el) {
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('.wip, .soon').forEach((n) => n.remove());
+    const label = clone.textContent.trim().toLowerCase();
+    const route = el.dataset.route;
+    const extra = route ? ALIAS[route] : ALIAS_SOON[label];
+    return label + ' ' + (extra || '');
+  }
+
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
     let shown = 0;
 
     nav.querySelectorAll('.nav-sec').forEach((sec) => {
       let visible = 0;
-      sec.querySelectorAll('a').forEach((a) => {
-        const hit = !q || a.textContent.toLowerCase().includes(q);
-        a.hidden = !hit;
+      /* both real links and the non-interactive Upcoming entries */
+      sec.querySelectorAll('a, .nav-soon').forEach((el) => {
+        const hit = !q || haystack(el).includes(q);
+        el.hidden = !hit;
         if (hit) visible++;
       });
       sec.hidden = visible === 0;
