@@ -956,6 +956,10 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
 
 .family-stack{display:flex;flex-direction:column;gap:22px;max-width:1100px;}
 .family-row{display:flex;gap:44px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 36px;}
+.family-aa-col{flex:0 0 300px;display:flex;flex-direction:column;}
+.family-aa-col .family-aa-big{flex:0 0 auto;margin-bottom:18px;}
+.family-aa-col h3{margin:0 0 8px;font-size:17px;}
+.family-aa-col .family-use{font-size:15px;line-height:23px;color:var(--ink);margin:0;}
 .family-aa-big{flex:0 0 190px;font-size:120px;line-height:1;font-weight:700;color:var(--navy);letter-spacing:-2px;}
 .family-body h3{margin:0 0 10px;font-size:17px;}
 .family-body p{font-size:15px;line-height:23px;color:var(--ink);margin:0 0 10px;max-width:72ch;}
@@ -971,7 +975,7 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
 .vd-x{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:#EF4444;color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center;margin-top:3px;}
 .vd-ico{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1.5px solid var(--navy);border-radius:50%;font-size:13px;vertical-align:-4px;}
 .vd-wm{height:16px;width:auto;fill:currentColor;vertical-align:-2px;}
-@media (max-width:900px){.vd-grid{grid-template-columns:1fr;}.family-row{flex-direction:column;gap:16px;}}
+@media (max-width:900px){.vd-grid{grid-template-columns:1fr;}.family-row{flex-direction:column;gap:16px;}.family-aa-col{flex:1 1 auto;}}
 
 .lg-mark{background:#C8F006;color:var(--navy);padding:2px 10px;border-radius:8px;font-size:.8em;}
 .lg-toggle{margin-left:14px;vertical-align:6px;}
@@ -983,6 +987,7 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
 .lg-demo figcaption{font-size:14px;color:var(--muted);margin-bottom:12px;max-width:340px;}
 .lg-demo--full figcaption{max-width:none;}
 .lg-canvas{display:flex;gap:var(--g);padding:0 var(--m);background:#F9FAFB;border:1px solid var(--line);}
+.lg-canvas--fluid{width:100%;}
 .lg-canvas i{flex:1;background:rgba(255,0,0,.08);border-left:1px solid rgba(255,0,0,.22);border-right:1px solid rgba(255,0,0,.22);opacity:0;transition:opacity .18s;}
 #grid-breakpoints.grids-on .lg-canvas i{opacity:1;}
 

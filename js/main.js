@@ -317,7 +317,7 @@ function initTokenCopy() {
     const value = el.dataset.copy;
     copyText(value)
       .then(() => flashToast(`Copied ${value}`))
-      .catch(() => flashToast(`Copy failed — ${value}`));
+      .catch(() => flashToast(`Copy failed: ${value}`));
   });
 }
 

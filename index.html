@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cleartax Design System</title>
-<meta name="description" content="Cleartax Design System v1.6 — logo, colour, typography, icons, and applications.">
+<meta name="description" content="Cleartax Design System v1.6, logo, colour, typography, icons, and applications.">
+<!-- Favicon: the dark-ground mark on light OS themes, the light-ground mark on dark ones. -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon/32x32-Dark.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon/32x32-Light.svg" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -94,7 +97,7 @@
   <article class="view" id="view-overview">
     <header class="doc-head">
       <h1>Cleartax Design System</h1>
-      <p class="doc-lead">Quality foundations and a small, deliberate set of brand elements — so everything we ship looks like it came from the same place. Navy and off-white do the heavy lifting; lime and violet earn their moments.</p>
+      <p class="doc-lead">Quality foundations and a small, deliberate set of brand elements, so everything we ship looks like it came from the same place. Navy and off-white do the heavy lifting; lime and violet earn their moments.</p>
     </header>
     <section class="doc-block">
       <h2>Browse the system</h2>
@@ -107,11 +110,11 @@
           <a class="topic-card" href="#layout" data-route="layout"><span class="topic-card-title">Layout grids</span><span class="topic-card-note">Columns, gutters, and margins across mobile, tablet, and desktop breakpoints.</span></a>
           <a class="topic-card" href="#icons" data-route="icons"><span class="topic-card-title">Icons</span><span class="topic-card-note">The 66-icon library plus the nine guidelines, construction metrics, and best practices behind it.</span></a>
           <a class="topic-card" href="#components" data-route="components"><span class="topic-card-title">Components</span><span class="topic-card-note">Buttons, badges, breadcrumbs, fields, alerts, and cards, rendered live.</span></a>
-          <a class="topic-card" href="#tokens" data-route="tokens"><span class="topic-card-title">Design tokens</span><span class="topic-card-note">526 tokens as CSS, SCSS, JS, and JSON — the values behind everything here.</span></a>
+          <a class="topic-card" href="#tokens" data-route="tokens"><span class="topic-card-title">Design tokens</span><span class="topic-card-note">526 tokens as CSS, SCSS, JS, and JSON, the values behind everything here.</span></a>
           <a class="topic-card" href="#motion" data-route="motion"><span class="topic-card-title">Motion</span><span class="topic-card-note">The exact durations and easings this site's own transitions run on.</span></a>
           <a class="topic-card" href="#accessibility" data-route="accessibility"><span class="topic-card-title">Accessibility</span><span class="topic-card-note">Colour accessibility with measured ratios, focus and alt-text rules for developers, and the do's and don'ts.</span></a>
-          <a class="topic-card" href="#applications" data-route="applications"><span class="topic-card-title">Applications</span><span class="topic-card-note">Decks, social, sales assets and merchandise — the system in real output.</span></a>
-          <a class="topic-card" href="#usage" data-route="usage"><span class="topic-card-title">Usage</span><span class="topic-card-note">The live Rebrand prototype — the system working as a product, not a spec.</span></a>
+          <a class="topic-card" href="#applications" data-route="applications"><span class="topic-card-title">Applications</span><span class="topic-card-note">Decks, social, sales assets and merchandise, the system in real output.</span></a>
+          <a class="topic-card" href="#usage" data-route="usage"><span class="topic-card-title">Usage</span><span class="topic-card-note">The live Rebrand prototype, the system working as a product, not a spec.</span></a>
       </div>
     </section>
     <section class="doc-block" hidden>
@@ -133,9 +136,9 @@
       <a class="btn btn--primary" href="assets/downloads/cleartax-logo.zip" download>Download logo files<span aria-hidden="true">↓</span></a>
     </header>
 
-    <section class="doc-block" id="logo-lockups">
-      <h2>Lockups</h2>
-      <p class="block-note">Two lockups cover every case — Ledger White on dark, Vault Navy on light. There is no third variant.</p>
+    <section class="doc-block" id="logo-styles">
+      <h2>Styles</h2>
+      <p class="block-note">Two lockups cover every case. Ledger White on dark, Vault Navy on light. There is no third variant.</p>
       <div class="pair-grid">
         <figure class="logo-card logo-card--dark">
           <img src="assets/img/Logo.svg" alt="Cleartax wordmark in Ledger White on Vault Navy">
@@ -153,9 +156,10 @@
       <p class="block-note">The wordmark is a single, fixed artwork. Never retype, resize individual letters, adjust spacing, or rebuild it. Always use the master artwork at its original 218&nbsp;×&nbsp;50 unit ratio of 4.36:1.<br>The wordmark is one continuous word, &ldquo;clear&rdquo; and &ldquo;tax&rdquo; are never separated, hyphenated, stacked, or differentiated by colour or weight. The join is the idea: clarity and tax as a single thing. Its character is geometric and rounded, even stroke weight, open counters, soft terminals, which is what gives it warmth without losing authority. Proportions, kerning and stroke weight are fixed and must never be altered. Do not add a symbol, icon, tagline, or descriptor into the wordmark itself; endorsements and product names sit outside the logo in an approved lockup.</p>
 
       <figure class="lgdia lgdia--wide">
-        <figcaption class="lgdia-cap">The master wordmark — 218 × 50 units, locked at 4.36 : 1</figcaption>
+        <figcaption class="lgdia-cap">The master wordmark, 218 × 50 units, locked at 4.36 : 1</figcaption>
         <svg class="lgdia-svg" viewBox="0 0 356 70" role="img" aria-label="The cleartax wordmark with ascender, x-height and baseline guides">
           <line class="g-line" x1="0" y1="10" x2="356" y2="10"/>
+          <line class="g-line" x1="0" y1="14.64" x2="356" y2="14.64"/>
           <line class="g-line" x1="0" y1="24.81" x2="356" y2="24.81"/>
           <line class="g-line" x1="0" y1="58.57" x2="356" y2="58.57"/>
           <text class="g-lab" x="256" y="8.2">Ascender  48.5</text>
@@ -176,7 +180,7 @@
             </div>
             <figcaption class="lgdia-sub">218 : 50</figcaption>
           </figure>
-          <p><b>218 : 50</b> — 4.36 : 1. Scale the whole mark, never a part of it.</p>
+          <p><b>218 : 50</b>, 4.36 : 1. Scale the whole mark, never a part of it.</p>
         </div>
 
         <div class="info-card con-card">
@@ -188,7 +192,7 @@
             </div>
             <figcaption class="lgdia-sub">69% of the ascender</figcaption>
           </figure>
-          <p><b>33.7 units</b> — 69% of the 48.5-unit ascender on the &ldquo;l&rdquo;, which gives the mark its low, wide stance.</p>
+          <p><b>33.7 units</b>, 69% of the 48.5-unit ascender on the &ldquo;l&rdquo;, which gives the mark its low, wide stance.</p>
         </div>
 
         <div class="info-card con-card con-card--wide">
@@ -223,34 +227,35 @@
       </figure>
       <p class="block-note">Clear space is measured using x, the height of the c. Keep at least 1x of empty space on all four sides of the logo. Nothing should enter this area, including text, lines, other logos, or image edges. When possible, allow even more space.</p>
       <p class="block-note">To ensure optimal readability, there should always be a minimum amount of clear space around the cleartax logo. This space isolates the mark from any competing graphic elements, such as other logos or body copy, that may conflict with, crowd, or diminish the overall impact of our mark.</p>
-      <p class="block-note"><b>Note:</b> there is no separate small-size cut of the wordmark. Where it would land below the minimums shown here, do not shrink it further — leave it out and let the layout carry the brand instead.</p>
+      <p class="block-note"><b>Note:</b> there is no separate small-size cut of the wordmark. Where it would land below the minimums shown here, do not shrink it further, leave it out and let the layout carry the brand instead.</p>
     </section>
 
     <section class="doc-block" id="logo-color">
       <h2>Logo colour in product</h2>
       <p class="block-note">Vault Navy on a light surface is the default. It is the highest-contrast pairing we have.</p>
       <div class="lgc-grid">
-        <div class="lgc"><div class="lgc-tile" style="background:#F2F1F0;border:1px solid #E8E3E4;"><img src="assets/img/Logo-dark.svg" alt=""></div><span class="lgc-name">Vault Navy 950 on Ledger White 100</span><span class="lgc-meta">17.75 : 1 — the default</span></div>
+        <div class="lgc"><div class="lgc-tile" style="background:#F2F1F0;border:1px solid #E8E3E4;"><img src="assets/img/Logo-dark.svg" alt=""></div><span class="lgc-name">Vault Navy 950 on Ledger White 100</span><span class="lgc-meta">17.75 : 1, the default</span></div>
         <div class="lgc"><div class="lgc-tile" style="background:#05022A;"><img src="assets/img/Logo.svg" alt=""></div><span class="lgc-name">Ledger White 100 on Vault Navy 950</span><span class="lgc-meta">17.75 : 1</span></div>
         <div class="lgc"><div class="lgc-tile" style="background:#C8F006;"><img src="assets/img/Logo-dark.svg" alt=""></div><span class="lgc-name">Vault Navy 950 on Flux Lime 500</span><span class="lgc-meta">15.18 : 1</span></div>
         <div class="lgc"><div class="lgc-tile" style="background:#5446FF;"><img src="assets/img/Logo.svg" alt=""></div><span class="lgc-name">Ledger White 100 on Nova Blue 500</span><span class="lgc-meta">5.03 : 1</span></div>
       </div>
     </section>
 
-    <section class="doc-block" id="logo-donts">
-      <h2>Logo don'ts</h2>
-      <p class="block-note">The wordmark is the only mark we have, so every alteration costs us recognition. It is supplied as finished artwork: place it, scale it proportionally, and change nothing else.</p>
-      <div class="avoid-grid avoid-grid--logo"><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT apply a gradient to the wordmark.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-1.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT recolour the wordmark to anything outside the approved colourways.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-2.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT stack or re-set the wordmark — it is one line.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-3.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT stretch, squash or otherwise change the proportions.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-8.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT place the wordmark over busy or high-chroma artwork.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-4.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT set the wordmark inside a sentence — write Cleartax as a word.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-5.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT add shadows, outlines, glows or any other effect.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-6.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT rotate the wordmark — it always sits level.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-7.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT change the letterspacing.</span></div></div>
+    <section class="doc-block" id="logo-merch">
+      <h2>Truncated Logo for Merch</h2>
+      <p class="block-note">It is available in solid and keyline formats. Do not use the truncated logo in any product or Ads.</p>
+      <div class="merch2-grid"><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48.svg" alt="Truncated logo, Vault Navy 950 on Ledger White 100"><a class="logo-dl" href="assets/img/merch/48x48.svg" download="48x48.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Ledger White 100</b><span>17.75 : 1, the default</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-1.svg" alt="Truncated logo, Ledger White 100 on Vault Navy 950"><a class="logo-dl" href="assets/img/merch/48x48-1.svg" download="48x48-1.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Vault Navy 950</b><span>17.75 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-2.svg" alt="Truncated logo, Vault Navy 950 on Flux Lime 500"><a class="logo-dl" href="assets/img/merch/48x48-2.svg" download="48x48-2.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Flux Lime 500</b><span>15.18 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-3.svg" alt="Truncated logo, Ledger White 100 on Nova Blue 500"><a class="logo-dl" href="assets/img/merch/48x48-3.svg" download="48x48-3.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Nova Blue 500</b><span>5.03 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-4.svg" alt="Truncated logo, Vault Navy 950 on Ledger White 100"><a class="logo-dl" href="assets/img/merch/48x48-4.svg" download="48x48-4.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Ledger White 100</b><span>17.75 : 1, the default</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-5.svg" alt="Truncated logo, Ledger White 100 on Vault Navy 950"><a class="logo-dl" href="assets/img/merch/48x48-5.svg" download="48x48-5.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Vault Navy 950</b><span>17.75 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-6.svg" alt="Truncated logo, Vault Navy 950 on Flux Lime 500"><a class="logo-dl" href="assets/img/merch/48x48-6.svg" download="48x48-6.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Flux Lime 500</b><span>15.18 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-7.svg" alt="Truncated logo, Ledger White 100 on Nova Blue 500"><a class="logo-dl" href="assets/img/merch/48x48-7.svg" download="48x48-7.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Nova Blue 500</b><span>5.03 : 1</span></figcaption></figure></div>
     </section>
 
-    <section class="doc-block" id="logo-color-donts">
-      <h2>Logo colour don'ts</h2>
-      <div class="avoid-grid avoid-grid--logo"><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-500-on-vault-navy-950.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 500 on Vault Navy 950</b><span>3.53 : 1 — brand on brand, and the mark still goes soft at small sizes</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/flux-lime-500-on-ledger-white-50.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime 500 on Ledger White 50</b><span>1.26 : 1 — lime is a highlight, never the mark on light</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/ledger-white-50-on-flux-lime-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White 50 on Flux Lime 500</b><span>1.26 : 1 — the same failure, inverted</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-500-on-nova-blue-900.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 500 on Nova Blue 900</b><span>2.08 : 1 — tonal, and far too close to read</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/flux-lime-500-on-nova-blue-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime 500 on Nova Blue 500</b><span>4.31 : 1 — clears 3 : 1 and still vibrates; the edges buzz</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/vault-navy-900-on-nova-blue-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy 900 on Nova Blue 500</b><span>2.29 : 1 — two blues, neither one winning</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-200-on-ledger-white-100.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 200 on Ledger White 100</b><span>1.43 : 1 — reads as soft and premium, reads as nothing when printed</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/vault-navy-950-on-nova-blue-900.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy 950 on Nova Blue 900</b><span>1.70 : 1 — dark on dark; the wordmark becomes a texture</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/ledger-white-300-on-ledger-white-50.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White 300 on Ledger White 50</b><span>1.45 : 1 — a watermark is not a logo placement</span></div></div>
+    <section class="doc-block" id="logo-favicon">
+      <h2>Truncated logo for favicon and icon</h2>
+      <p class="block-note">These icons will be used in browser tabs and search results. Beyond that, it can be used only in places where Where the primary logo in unreadable.</p>
+      <div class="fav-table2"><div class="fav-tr"><div class="fav-td-info"><b>512 × 512</b><span>Progressive Web App (PWA) icon and app stores</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:112px;height:112px;"><img src="assets/img/favicon/isotype-512.svg" alt="512 by 512 favicon" style="height:64px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-512.svg" download="isotype-512.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>192 × 192</b><span>Android/PWA icon</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:96px;height:96px;"><img src="assets/img/favicon/isotype-192.svg" alt="192 by 192 favicon" style="height:55px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-192.svg" download="isotype-192.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>180 × 180</b><span>Apple Touch Icon (iPhone/iPad home screen)</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:90px;height:90px;"><img src="assets/img/favicon/isotype-180.svg" alt="180 by 180 favicon" style="height:52px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-180.svg" download="isotype-180.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>48 × 48</b><span>Some Windows and search engine uses</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:48px;height:48px;"><img src="assets/img/favicon/isotype-48.svg" alt="48 by 48 favicon" style="height:28px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-48.svg" download="isotype-48.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>32 × 32</b><span>High-DPI browser tabs and taskbars</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:32px;height:32px;"><img src="assets/img/favicon/isotype-32.svg" alt="32 by 32 favicon" style="height:19px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-32.svg" download="isotype-32.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>16 × 16</b><span>Browser tabs (standard favicon)</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:16px;height:16px;"><img src="assets/img/favicon/isotype-16.svg" alt="16 by 16 favicon" style="height:9px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-16.svg" download="isotype-16.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div></div>
     </section>
 
     <section class="doc-block" id="logo-isotype">
       <h2>Isotype</h2>
-      <p class="block-note">Our isotype is an extension of our wordmark, distilled down to its purest essence. The isotype can be used as a favicon for browser tabs, as social media avatars or as a secondary graphic element in swag.</p>
+      <p class="block-note">Our isotype is an extension of our wordmark, distilled down to its purest essence. The isotype can be used as a favicon for browser tabs, as social media avatars or as a secondary graphic element.</p>
       <p class="block-note">Our logos are focused to use on the web, and they have a responsive version in which the isotype applications take over the logo&rsquo;s role.</p>
       <h3 class="isoV-head">Light mode</h3>
       <div class="isoV-row"><div class="isoV-cell"><span class="isoV-tile" style="width:160px;height:160px;"><img src="assets/img/isotype/light/Isotype-Lightmode-9.svg" alt="Cleartax isotype light mode 256 by 256" style="width:160px;height:160px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-9.svg" download="Isotype-Lightmode-9.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>256x256</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:140px;height:140px;"><img src="assets/img/isotype/light/Isotype-Lightmode-1.svg" alt="Cleartax isotype light mode 224 by 224" style="width:140px;height:140px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-1.svg" download="Isotype-Lightmode-1.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>224x224</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:120px;height:120px;"><img src="assets/img/isotype/light/Isotype-Lightmode-2.svg" alt="Cleartax isotype light mode 192 by 192" style="width:120px;height:120px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-2.svg" download="Isotype-Lightmode-2.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>192x192</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:100px;height:100px;"><img src="assets/img/isotype/light/Isotype-Lightmode-3.svg" alt="Cleartax isotype light mode 160 by 160" style="width:100px;height:100px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-3.svg" download="Isotype-Lightmode-3.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>160x160</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:80px;height:80px;"><img src="assets/img/isotype/light/Isotype-Lightmode-4.svg" alt="Cleartax isotype light mode 128 by 128" style="width:80px;height:80px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-4.svg" download="Isotype-Lightmode-4.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>128x128</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:70px;height:70px;"><img src="assets/img/isotype/light/Isotype-Lightmode-5.svg" alt="Cleartax isotype light mode 112 by 112" style="width:70px;height:70px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-5.svg" download="Isotype-Lightmode-5.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>112x112</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:60px;height:60px;"><img src="assets/img/isotype/light/Isotype-Lightmode-6.svg" alt="Cleartax isotype light mode 96 by 96" style="width:60px;height:60px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-6.svg" download="Isotype-Lightmode-6.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>96x96</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:50px;height:50px;"><img src="assets/img/isotype/light/Isotype-Lightmode-7.svg" alt="Cleartax isotype light mode 80 by 80" style="width:50px;height:50px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-7.svg" download="Isotype-Lightmode-7.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>80x80</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:40px;height:40px;"><img src="assets/img/isotype/light/Isotype-Lightmode-8.svg" alt="Cleartax isotype light mode 64 by 64" style="width:40px;height:40px;"><a class="logo-dl" href="assets/img/isotype/light/Isotype-Lightmode-8.svg" download="Isotype-Lightmode-8.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>64x64</span></div></div>
@@ -258,16 +263,15 @@
       <div class="isoV-row"><div class="isoV-cell"><span class="isoV-tile" style="width:160px;height:160px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-9.svg" alt="Cleartax isotype dark mode 256 by 256" style="width:160px;height:160px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-9.svg" download="Isotype-Darkmode-9.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>256x256</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:140px;height:140px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-1.svg" alt="Cleartax isotype dark mode 224 by 224" style="width:140px;height:140px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-1.svg" download="Isotype-Darkmode-1.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>224x224</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:120px;height:120px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-2.svg" alt="Cleartax isotype dark mode 192 by 192" style="width:120px;height:120px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-2.svg" download="Isotype-Darkmode-2.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>192x192</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:100px;height:100px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-3.svg" alt="Cleartax isotype dark mode 160 by 160" style="width:100px;height:100px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-3.svg" download="Isotype-Darkmode-3.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>160x160</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:80px;height:80px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-4.svg" alt="Cleartax isotype dark mode 128 by 128" style="width:80px;height:80px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-4.svg" download="Isotype-Darkmode-4.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>128x128</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:70px;height:70px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-5.svg" alt="Cleartax isotype dark mode 112 by 112" style="width:70px;height:70px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-5.svg" download="Isotype-Darkmode-5.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>112x112</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:60px;height:60px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-6.svg" alt="Cleartax isotype dark mode 96 by 96" style="width:60px;height:60px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-6.svg" download="Isotype-Darkmode-6.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>96x96</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:50px;height:50px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-7.svg" alt="Cleartax isotype dark mode 80 by 80" style="width:50px;height:50px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-7.svg" download="Isotype-Darkmode-7.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>80x80</span></div><div class="isoV-cell"><span class="isoV-tile" style="width:40px;height:40px;"><img src="assets/img/isotype/dark/Isotype-Darkmode-8.svg" alt="Cleartax isotype dark mode 64 by 64" style="width:40px;height:40px;"><a class="logo-dl" href="assets/img/isotype/dark/Isotype-Darkmode-8.svg" download="Isotype-Darkmode-8.svg">Download SVG<span aria-hidden="true">↓</span></a></span><span>64x64</span></div></div>
     </section>
 
-    <section class="doc-block" id="logo-merch">
-      <h2>Truncated Logo for Merch</h2>
-      <p class="block-note">It is available in solid and keyline formats. Do not use the truncated logo in any product or Ads.</p>
-      <div class="merch2-grid"><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48.svg" alt="Truncated logo — Vault Navy 950 on Ledger White 100"><a class="logo-dl" href="assets/img/merch/48x48.svg" download="48x48.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Ledger White 100</b><span>17.75 : 1 — the default</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-1.svg" alt="Truncated logo — Ledger White 100 on Vault Navy 950"><a class="logo-dl" href="assets/img/merch/48x48-1.svg" download="48x48-1.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Vault Navy 950</b><span>17.75 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-2.svg" alt="Truncated logo — Vault Navy 950 on Flux Lime 500"><a class="logo-dl" href="assets/img/merch/48x48-2.svg" download="48x48-2.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Flux Lime 500</b><span>15.18 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-3.svg" alt="Truncated logo — Ledger White 100 on Nova Blue 500"><a class="logo-dl" href="assets/img/merch/48x48-3.svg" download="48x48-3.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Nova Blue 500</b><span>5.03 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-4.svg" alt="Truncated logo — Vault Navy 950 on Ledger White 100"><a class="logo-dl" href="assets/img/merch/48x48-4.svg" download="48x48-4.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Ledger White 100</b><span>17.75 : 1 — the default</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-5.svg" alt="Truncated logo — Ledger White 100 on Vault Navy 950"><a class="logo-dl" href="assets/img/merch/48x48-5.svg" download="48x48-5.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Vault Navy 950</b><span>17.75 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-6.svg" alt="Truncated logo — Vault Navy 950 on Flux Lime 500"><a class="logo-dl" href="assets/img/merch/48x48-6.svg" download="48x48-6.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Vault Navy 950 on Flux Lime 500</b><span>15.18 : 1</span></figcaption></figure><figure class="merch2"><div class="merch2-tile"><img src="assets/img/merch/48x48-7.svg" alt="Truncated logo — Ledger White 100 on Nova Blue 500"><a class="logo-dl" href="assets/img/merch/48x48-7.svg" download="48x48-7.svg">Download SVG<span aria-hidden="true">↓</span></a></div><figcaption><b>Ledger White 100 on Nova Blue 500</b><span>5.03 : 1</span></figcaption></figure></div>
+    <section class="doc-block" id="logo-donts">
+      <h2>Logo don'ts</h2>
+      <p class="block-note">The wordmark is the only mark we have, so every alteration costs us recognition. It is supplied as finished artwork: place it, scale it proportionally, and change nothing else.</p>
+      <div class="avoid-grid avoid-grid--logo"><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT apply a gradient to the wordmark.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-1.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT recolour the wordmark to anything outside the approved colourways.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-2.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT stack or re-set the wordmark, it is one line.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-3.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT stretch, squash or otherwise change the proportions.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-8.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT place the wordmark over busy or high-chroma artwork.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-4.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT set the wordmark inside a sentence, write Cleartax as a word.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-5.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT add shadows, outlines, glows or any other effect.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-6.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT rotate the wordmark, it always sits level.</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/example-7.svg" alt=""></div><span class="avoid-tag">DO NOT</span><span class="avoid-cap">DO NOT change the letterspacing.</span></div></div>
     </section>
 
-    <section class="doc-block" id="logo-favicon">
-      <h2>Truncated logo for favicon and icon</h2>
-      <p class="block-note">These icons will be used in browser tabs and search results. Beyond that, it can be used only in places where Where the primary logo in unreadable.</p>
-      <div class="fav-table2"><div class="fav-tr"><div class="fav-td-info"><b>512 × 512</b><span>Progressive Web App (PWA) icon and app stores</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:112px;height:112px;"><img src="assets/img/favicon/isotype-512.svg" alt="512 by 512 favicon" style="height:64px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-512.svg" download="isotype-512.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>192 × 192</b><span>Android/PWA icon</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:96px;height:96px;"><img src="assets/img/favicon/isotype-192.svg" alt="192 by 192 favicon" style="height:55px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-192.svg" download="isotype-192.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>180 × 180</b><span>Apple Touch Icon (iPhone/iPad home screen)</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:90px;height:90px;"><img src="assets/img/favicon/isotype-180.svg" alt="180 by 180 favicon" style="height:52px;"></span><em class="fav-scale">shown at reduced size</em><a class="logo-dl" href="assets/img/favicon/isotype-180.svg" download="isotype-180.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>48 × 48</b><span>Some Windows and search engine uses</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:48px;height:48px;"><img src="assets/img/favicon/isotype-48.svg" alt="48 by 48 favicon" style="height:28px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-48.svg" download="isotype-48.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>32 × 32</b><span>High-DPI browser tabs and taskbars</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:32px;height:32px;"><img src="assets/img/favicon/isotype-32.svg" alt="32 by 32 favicon" style="height:19px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-32.svg" download="isotype-32.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div><div class="fav-tr"><div class="fav-td-info"><b>16 × 16</b><span>Browser tabs (standard favicon)</span></div><div class="fav-td-mark"><span class="fav-tile" style="width:16px;height:16px;"><img src="assets/img/favicon/isotype-16.svg" alt="16 by 16 favicon" style="height:9px;"></span><em class="fav-scale">actual size</em><a class="logo-dl" href="assets/img/favicon/isotype-16.svg" download="isotype-16.svg">Download SVG<span aria-hidden="true">↓</span></a></div></div></div>
+    <section class="doc-block" id="logo-color-donts">
+      <h2>Logo colour don'ts</h2>
+      <div class="avoid-grid avoid-grid--logo"><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-500-on-vault-navy-950.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 500 on Vault Navy 950</b><span>3.53 : 1, brand on brand, and the mark still goes soft at small sizes</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/flux-lime-500-on-ledger-white-50.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime 500 on Ledger White 50</b><span>1.26 : 1, lime is a highlight, never the mark on light</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/ledger-white-50-on-flux-lime-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White 50 on Flux Lime 500</b><span>1.26 : 1, the same failure, inverted</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-500-on-nova-blue-900.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 500 on Nova Blue 900</b><span>2.08 : 1, tonal, and far too close to read</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/flux-lime-500-on-nova-blue-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime 500 on Nova Blue 500</b><span>4.31 : 1, clears 3 : 1 and still vibrates; the edges buzz</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/vault-navy-900-on-nova-blue-500.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy 900 on Nova Blue 500</b><span>2.29 : 1, two blues, neither one winning</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/nova-blue-200-on-ledger-white-100.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue 200 on Ledger White 100</b><span>1.43 : 1, reads as soft and premium, reads as nothing when printed</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/vault-navy-950-on-nova-blue-900.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy 950 on Nova Blue 900</b><span>1.70 : 1, dark on dark; the wordmark becomes a texture</span></div><div class="avoid-card"><div class="avoid-img"><img src="assets/img/logo-donts/ledger-white-300-on-ledger-white-50.svg" alt=""></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White 300 on Ledger White 50</b><span>1.45 : 1, a watermark is not a logo placement</span></div></div>
     </section>
   </article>
 
@@ -370,7 +374,7 @@
           <h3>Do</h3>
           <ul>
             <li>Let Ledger White hold roughly 60% of the layout - the empty space is the design</li>
-            <li>Four colours, four jobs. Navy carries the brand, off-white holds the space, lime highlights, violet converts. Every colour has exactly one role — that's what keeps layouts calm</li>
+            <li>Four colours, four jobs. Navy carries the brand, off-white holds the space, lime highlights, violet converts. Every colour has exactly one role, that's what keeps layouts calm</li>
             <li>Do keep colour usage consistent across components</li>
           </ul>
         </div>
@@ -413,22 +417,21 @@
       <h2>Preferred Colour pairings</h2>
       <p class="block-note">A selection of Cleartax colors that pair well together and pass universal accessibility testing.</p>
       <div class="lgc-grid lgc-grid--three">
-        <div class="lgc"><div class="lgc-tile" style="background:#F2F1F0;border:1px solid #E8E3E4;"><span class="lgc-sample" style="color:#05022A;">Aa</span></div><span class="lgc-name">Vault Navy/950 + Ledger White/100</span><span class="lgc-meta">17.75:1 · AAA — The default pairing. Highest contrast in the system - safe for body text at any size.</span></div>
-        <div class="lgc"><div class="lgc-tile" style="background:#05022A;"><span class="lgc-sample" style="color:#C8F006;">Aa</span></div><span class="lgc-name">Vault Navy/950 + Flux Lime/500</span><span class="lgc-meta">15.19:1 · AAA — The one approved way to spend Flux Lime: a single highlight on the navy ground.</span></div>
-        <div class="lgc"><div class="lgc-tile" style="background:#5446FF;"><span class="lgc-sample" style="color:#FAFAF9;">Aa</span></div><span class="lgc-name">Nova Blue/500 + Ledger White/50</span><span class="lgc-meta">5.44:1 · AA — Brand Nova Blue as a fill with a near-white label. AA but not AAA — buttons, not paragraphs.</span></div>
+        <div class="lgc"><div class="lgc-tile" style="background:#F2F1F0;border:1px solid #E8E3E4;"><span class="lgc-sample" style="color:#05022A;">Aa</span></div><span class="lgc-name">Vault Navy/950 + Ledger White/100</span><span class="lgc-meta">17.75:1 · AAA. The default pairing. Highest contrast in the system - safe for body text at any size.</span></div>
+        <div class="lgc"><div class="lgc-tile" style="background:#05022A;"><span class="lgc-sample" style="color:#C8F006;">Aa</span></div><span class="lgc-name">Vault Navy/950 + Flux Lime/500</span><span class="lgc-meta">15.19:1 · AAA. The one approved way to spend Flux Lime: a single highlight on the navy ground.</span></div>
+        <div class="lgc"><div class="lgc-tile" style="background:#5446FF;"><span class="lgc-sample" style="color:#FAFAF9;">Aa</span></div><span class="lgc-name">Nova Blue/500 + Ledger White/50</span><span class="lgc-meta">5.44:1 · AA. Brand Nova Blue as a fill with a near-white label. AA but not AAA, buttons, not paragraphs.</span></div>
       </div>
 
       <h2 style="margin-top:44px;">Colour pairings to avoid</h2>
       <p class="block-note">Here are color pairings to avoid when creating layouts. These are pairings that lack sufficient contrast.</p>
       <div class="avoid-grid">
-        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#5446FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue/500 on Vault Navy/950</b><span>3.53:1 · fails AA — The brand accent as text on the brand ground. Convincing at 40px, unreadable at 14px.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#F2F1F0;"><span class="avoid-aa" style="color:#7675FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue/400 on Ledger White/100</b><span>3.23:1 · fails AA — A lighter indigo for links on the page ground. Links are the last thing that should be borderline.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#FAFAF9;border:1px solid #E8E3E4;"><span class="avoid-aa" style="color:#869405;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime/700 on Ledger White/50</b><span>3.22:1 · fails AA — Darkening Flux Lime so it &ldquo;works&rdquo; on white. Two steps down the ramp and it still misses.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#70780B;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime/800 on Vault Navy/950</b><span>4.18:1 · fails AA — Muted lime on navy looks considered, but 4.18:1 sits just under the bar for body text.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#7B696A;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White/500 on Vault Navy/950</b><span>3.88:1 · fails AA — Mid grey as a caption on a navy panel — the most common failure in dark sections.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#F2F1F0;"><span class="avoid-aa" style="color:#AA9C9D;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White/400 on Ledger White/100</b><span>2.34:1 · fails AA — Secondary text on the page ground. At 2.34:1 this is decoration, not text.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#DDE1FF;"><span class="avoid-aa" style="color:#4A58FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy/400 on Nova Blue/100</b><span>3.94:1 · fails AA — Two blues two degrees apart in hue. Visible, but it reads as a rendering fault.</span></div>
-        <div class="avoid-card"><div class="avoid-tile" style="background:#C8F006;"><span class="avoid-aa" style="color:#2123FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy/500 on Flux Lime/500</b><span>5.79:1 · passes AA · still vibrates — Clears AA on paper, yet both are fully saturated and 169° apart — the shared edge buzzes.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#5446FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue/500 on Vault Navy/950</b><span>3.53:1 · fails AA. The brand accent as text on the brand ground. Convincing at 40px, unreadable at 14px.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#F2F1F0;"><span class="avoid-aa" style="color:#7675FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Nova Blue/400 on Ledger White/100</b><span>3.23:1 · fails AA. A lighter indigo for links on the page ground. Links are the last thing that should be borderline.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#FAFAF9;border:1px solid #E8E3E4;"><span class="avoid-aa" style="color:#869405;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime/700 on Ledger White/50</b><span>3.22:1 · fails AA. Darkening Flux Lime so it &ldquo;works&rdquo; on white. Two steps down the ramp and it still misses.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#70780B;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Flux Lime/800 on Vault Navy/950</b><span>4.18:1 · fails AA. Muted lime on navy looks considered, but 4.18:1 sits just under the bar for body text.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#05022A;"><span class="avoid-aa" style="color:#7B696A;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White/500 on Vault Navy/950</b><span>3.88:1 · fails AA. Mid grey as a caption on a navy panel, the most common failure in dark sections.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#F2F1F0;"><span class="avoid-aa" style="color:#AA9C9D;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Ledger White/400 on Ledger White/100</b><span>2.34:1 · fails AA. Secondary text on the page ground. At 2.34:1 this is decoration, not text.</span></div>
+        <div class="avoid-card"><div class="avoid-tile" style="background:#DDE1FF;"><span class="avoid-aa" style="color:#4A58FF;">Aa</span></div><span class="avoid-tag">DO NOT USE</span><b>Vault Navy/400 on Nova Blue/100</b><span>3.94:1 · fails AA. Two blues two degrees apart in hue. Visible, but it reads as a rendering fault.</span></div>
       </div>
     </section>
   </article>
@@ -459,20 +462,26 @@
       <h2>The families</h2>
       <div class="family-stack">
         <div class="family-row">
-          <span class="family-aa-big" style="font-family:'Inter Tight';">Aa</span>
+          <div class="family-aa-col">
+            <span class="family-aa-big" style="font-family:'Inter Tight';">Aa</span>
+            <h3>Primary typeface: Inter Tight</h3>
+            <p class="family-use">Display, H1–H6. Headlines, hero lines, campaign lines, section titles, cover slides and large display figures.</p>
+          </div>
           <div class="family-body">
-            <h3>Primary typeface — Inter Tight</h3>
-            <p><b>Display, H1–H6.</b> Headlines, hero lines, campaign lines, section titles, cover slides and large display figures.</p>
+            
             <p>Inter Tight is the close spaced cut of Inter. The tight setting is the reason we chose it. Set large, the words pull into a single block instead of drifting apart into a string of letters, so the line holds as one shape. It also keeps long terms on one line. &ldquo;Continuous compliance, without borders&rdquo; and &ldquo;Input tax credit reconciliation&rdquo; are lines we have to set in banners and on covers, and a wider face breaks them across two.</p>
             <p>The letterforms carry no stylistic quirks. No unusual terminals, no distinctive g, nothing that dates. Our headlines are usually the entire idea, and a typeface with an accent competes with them.</p>
             <p>It is a variable font from thin to black, so one file gives us the full hierarchy and the site stays light.</p>
           </div>
         </div>
         <div class="family-row">
-          <span class="family-aa-big" style="font-family:'Google Sans';">Aa</span>
+          <div class="family-aa-col">
+            <span class="family-aa-big" style="font-family:'Google Sans';">Aa</span>
+            <h3>Secondary typeface: Google Sans</h3>
+            <p class="family-use">Body copy, paragraphs, labels, overlines, captions and long form documents.</p>
+          </div>
           <div class="family-body">
-            <h3>Secondary typeface — Google Sans</h3>
-            <p><b>Body copy, paragraphs, labels, overlines, captions and long form documents.</b></p>
+            
             <p>The main reason is the wordmark. The cleartax logotype is drawn from a geometric skeleton with circular forms, soft terminals and an even stroke weight, and Google Sans is built from the same vocabulary. Put the logo above a paragraph and they read as related. Set the same paragraph in Inter and they read as two decisions made by two people. This is the one argument in this section you can verify by looking.</p>
             <p>The second reason is temperature. Round bowls, open counters and soft terminals make it noticeably warmer than a grotesque at paragraph size, and that is where people spend real time with us: whitepapers, guides, mandate explainers, case studies. It is also what keeps the overall system from tipping cold, since Vault Navy, tight headlines and disciplined layouts are all pulling the other way.</p>
             <p>Google Sans Text, the reading cut, is tuned for small sizes, and the family covers the scripts we need as we move into more markets.</p>
@@ -534,7 +543,7 @@
 
     <section class="doc-block" id="type-paragraphs">
 <h2>Paragraphs</h2>
-<p class="block-note">Google Sans. Each size ships in Regular, Medium and Semibold, plus Special cuts — underline, strikethrough and italics — in Medium.</p>
+<p class="block-note">Google Sans. Each size ships in Regular, Medium and Semibold, plus Special cuts, underline, strikethrough and italics, in Medium.</p>
 <div class="type-row"><span class="type-row-label">Paragraph Large<small>Google Sans</small><small>18px / 28px</small></span><span class="type-sample-stack"><span class="type-sample" style="font-family:'Google Sans';font-weight:400;font-size:18px;line-height:28px;"><em class="wtag">Regular</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:18px;line-height:28px;"><em class="wtag">Medium</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:600;font-size:18px;line-height:28px;"><em class="wtag">Semibold</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:18px;line-height:28px;"><em class="wtag">Special</em><u>The quick brown fox jumps over the lazy dog.</u><br><s>The quick brown fox jumps over the lazy dog.</s><br><i>The quick brown fox jumps over the lazy dog.</i></span></span></div>
 <div class="type-row"><span class="type-row-label">Paragraph Medium<small>Google Sans</small><small>16px / 24px</small></span><span class="type-sample-stack"><span class="type-sample" style="font-family:'Google Sans';font-weight:400;font-size:16px;line-height:24px;"><em class="wtag">Regular</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:16px;line-height:24px;"><em class="wtag">Medium</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:600;font-size:16px;line-height:24px;"><em class="wtag">Semibold</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:16px;line-height:24px;"><em class="wtag">Special</em><u>The quick brown fox jumps over the lazy dog.</u><br><s>The quick brown fox jumps over the lazy dog.</s><br><i>The quick brown fox jumps over the lazy dog.</i></span></span></div>
 <div class="type-row"><span class="type-row-label">Paragraph Small<small>Google Sans</small><small>14px / 20px</small></span><span class="type-sample-stack"><span class="type-sample" style="font-family:'Google Sans';font-weight:400;font-size:14px;line-height:20px;"><em class="wtag">Regular</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:14px;line-height:20px;"><em class="wtag">Medium</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:600;font-size:14px;line-height:20px;"><em class="wtag">Semibold</em>The quick brown fox jumps over the lazy dog.</span><span class="type-sample" style="font-family:'Google Sans';font-weight:500;font-size:14px;line-height:20px;"><em class="wtag">Special</em><u>The quick brown fox jumps over the lazy dog.</u><br><s>The quick brown fox jumps over the lazy dog.</s><br><i>The quick brown fox jumps over the lazy dog.</i></span></span></div>
@@ -577,12 +586,12 @@
     </section>
 
     <section class="doc-block" id="type-applied">
-      <h2>Typography in use — applied</h2>
+      <h2>Typography in use: applied</h2>
       <p class="block-note">A few examples of how Inter Tight and Google Sans combine to build a clear information hierarchy for Cleartax.</p>
       <div class="applied-demo">
         <span style="font-family:'Google Sans';font-weight:600;font-size:12px;line-height:20px;letter-spacing:1px;text-transform:uppercase;color:#5446FF;">Point of view</span>
-        <h3 style="font-family:'Inter Tight';font-weight:600;font-size:44px;line-height:48px;letter-spacing:-0.5px;margin:10px 0 14px;">File every return.<br>Miss nothing.</h3>
-        <p style="font-family:'Google Sans';font-weight:400;font-size:16px;line-height:24px;max-width:56ch;margin:0 0 22px;">Returns are prepared and validated before every deadline, with no manual re-entry. Finance teams, tax heads and enterprises running multi-entity compliance will find it here. Nothing left to reconcile.</p>
+        <h3 style="font-family:'Inter Tight';font-weight:600;font-size:44px;line-height:48px;letter-spacing:-0.5px;margin:10px 0 14px;">One platform.<br>Every mandate.</h3>
+        <p style="font-family:'Google Sans';font-weight:400;font-size:16px;line-height:24px;max-width:56ch;margin:0 0 22px;">Connect your ERP once and file across every entity, state and country from a single system of record. Input tax credit is reconciled at invoice level, so your finance team closes the period without chasing suppliers.</p>
         <span class="btn btn--primary" style="pointer-events:none;">Book a demo</span>
       </div>
     </section>
@@ -593,7 +602,7 @@
       <div class="pairx-stack">
         <div class="pairx pairx--wide"><div class="pairx-tile"><span class="pairx-half" style="background:#F2F1F0;color:#05022A;">Vault Navy 950</span><span class="pairx-half" style="background:#05022A;color:#F2F1F0;">Ledger White 100</span></div><span class="pairx-meta grade-aaa">17.75:1 · AAA</span></div>
         <div class="pairx pairx--wide"><div class="pairx-tile"><span class="pairx-half" style="background:#C8F006;color:#05022A;">Vault Navy 950</span><span class="pairx-half" style="background:#05022A;color:#C8F006;">Flux Lime 500</span></div><span class="pairx-meta grade-aaa">15.19:1 · AAA</span></div>
-        <div class="pairx pairx--wide"><div class="pairx-tile"><span class="pairx-half" style="background:#FAFAF9;color:#5446FF;">Nova Blue 500</span><span class="pairx-half" style="background:#5446FF;color:#FAFAF9;">Ledger White 50</span></div><span class="pairx-meta grade-aa">5.44:1 · AA · not AAA — avoid for long body copy</span></div>
+        <div class="pairx pairx--wide"><div class="pairx-tile"><span class="pairx-half" style="background:#FAFAF9;color:#5446FF;">Nova Blue 500</span><span class="pairx-half" style="background:#5446FF;color:#FAFAF9;">Ledger White 50</span></div><span class="pairx-meta grade-aa">5.44:1 · AA · not AAA, avoid for long body copy</span></div>
       </div>
       <p class="block-note" style="margin-top:14px;">Contrast is symmetrical, so each pair is valid in both directions - the card shows both. Ratios are measured from the bound variables.</p>
     </section>
@@ -730,7 +739,7 @@
         <div class="info-card"><h3>Meaning</h3><p>Icons should communicate their meaning immediately. Prefer familiar, standard symbols over abstract metaphors or decorative interpretations.</p></div>
         <div class="info-card"><h3>Optical balance</h3><p>Icons should be visually balanced rather than mathematically identical. Adjust proportions, spacing, and visual weight so icons appear consistent when placed together.</p></div>
         <div class="info-card"><h3>Scalability</h3><p>Design icons to remain clear at small sizes. Simplify unnecessary detail when an icon needs to work at smaller scales, while preserving its recognisable shape.</p></div>
-        <div class="info-card"><h3>Sizing</h3><p>Use the predefined icon sizes — 32, 24 and 20 — across products and interfaces. Do not arbitrarily resize individual icons or distort their proportions.</p></div>
+        <div class="info-card"><h3>Sizing</h3><p>Use the predefined icon sizes, 32, 24 and 20, across products and interfaces. Do not arbitrarily resize individual icons or distort their proportions.</p></div>
       </div>
     </section>
 
@@ -740,15 +749,15 @@
       <div class="tok-table">
         <div class="tok-row tok-row--plain tok-row--head"><span class="tok-label">Metric</span><span class="tok-var">Value</span><span class="tok-val">Notes</span></div>
         <div class="tok-row tok-row--plain"><span class="tok-label">Artboard</span><span class="tok-var">32 × 32</span><span class="tok-val">Four multiples of the 8px grid</span></div>
-        <div class="tok-row tok-row--plain"><span class="tok-label">Chip</span><span class="tok-var">Ø 32 circle</span><span class="tok-val">Every glyph ships on it — optical padding built in</span></div>
+        <div class="tok-row tok-row--plain"><span class="tok-label">Chip</span><span class="tok-var">Ø 32 circle</span><span class="tok-val">Every glyph ships on it, optical padding built in</span></div>
         <div class="tok-row tok-row--plain"><span class="tok-label">Live area</span><span class="tok-var">24 × 24</span><span class="tok-val">4px of clearance on every side</span></div>
-        <div class="tok-row tok-row--plain"><span class="tok-label">Stroke</span><span class="tok-var">1px, uniform</span><span class="tok-val">Renders 0.75 at 24 and 0.63 at 20 — why 20 is the floor</span></div>
+        <div class="tok-row tok-row--plain"><span class="tok-label">Stroke</span><span class="tok-var">1px, uniform</span><span class="tok-val">Renders 0.75 at 24 and 0.63 at 20, why 20 is the floor</span></div>
         <div class="tok-row tok-row--plain"><span class="tok-label">Terminals</span><span class="tok-var">Round cap</span><span class="tok-val">Open stroke ends read as drawn, not snapped off</span></div>
         <div class="tok-row tok-row--plain"><span class="tok-label">Joins</span><span class="tok-var">Round</span><span class="tok-val">Corners echo the wordmark's soft terminals</span></div>
         <div class="tok-row tok-row--plain"><span class="tok-label">Counters</span><span class="tok-var">2px minimum</span><span class="tok-val">Narrower enclosed space fills in at 20</span></div>
       </div>
       <div class="pair-grid" style="margin-top:24px;">
-        <div class="info-card"><h3>Why an outline set</h3><p>At 1px on a 32px box, an outline icon carries about the same optical weight as the stem of body text — so it reads as part of the label, not as a button. In a compliance product the eye should land on the number, not the picture beside it.</p></div>
+        <div class="info-card"><h3>Why an outline set</h3><p>At 1px on a 32px box, an outline icon carries about the same optical weight as the stem of body text, so it reads as part of the label, not as a button. In a compliance product the eye should land on the number, not the picture beside it.</p></div>
         <div class="info-card"><h3>Why the chip</h3><p>The 32px circle makes an icon a self-contained object: it drops into a table row, card, or category chip with its padding already built in, so nobody decides the spacing twice. It also gives the two-tone drawing a neutral ground on any surface.</p></div>
       </div>
     </section>
@@ -776,7 +785,7 @@
           <ul>
             <li>Mix icons from different libraries or visual styles within the same interface</li>
             <li>Change the stroke weight of an existing icon</li>
-            <li>Stretch, compress, rotate, or mirror icons — directional icons may mirror in RTL locales, nothing else</li>
+            <li>Stretch, compress, rotate, or mirror icons, directional icons may mirror in RTL locales, nothing else</li>
             <li>Redraw an existing icon to create a slightly different version</li>
             <li>Introduce unapproved colours, gradients, shadows, or effects</li>
             <li>Add unnecessary decorative details to functional icons</li>
@@ -842,7 +851,7 @@
       <div class="pair-grid">
         <div class="info-card">
           <h3>Image and text spacing</h3>
-          <p>Images are visually heavier than text. Adding extra space creates balance between vibrant imagery and content, making it easier to read — and more space creates better contrast between a headline and tinted text.</p>
+          <p>Images are visually heavier than text. Adding extra space creates balance between vibrant imagery and content, making it easier to read, and more space creates better contrast between a headline and tinted text.</p>
         </div>
         <div class="info-card">
           <h3>Component spacing</h3>
@@ -859,7 +868,7 @@
           <ul>
             <li>Use values from the approved spacing scale consistently</li>
             <li>Use smaller spacing within components and larger spacing between sections</li>
-            <li>Increase spacing for larger hierarchy jumps — between sections and major content groups</li>
+            <li>Increase spacing for larger hierarchy jumps, between sections and major content groups</li>
             <li>Use spacing to create clear relationships between related elements</li>
             <li>Maintain consistent spacing between similar components throughout the interface</li>
             <li>Use repetition of spacing values to create rhythm and visual consistency</li>
@@ -892,7 +901,7 @@
 
     <section class="doc-block" id="fx-shadows">
       <h2>Shadows</h2>
-      <p class="block-note">Shadows serve purposes from aesthetics to functionality — they can signify that an element is interactive, like making it seem clickable.</p>
+      <p class="block-note">Shadows serve purposes from aesthetics to functionality, they can signify that an element is interactive, like making it seem clickable.</p>
       <div class="fx-grid">
         <div class="fx-block">
           <button class="fx-name" data-copy="shadow-xsmall" title="Click to copy token name">shadow-xsmall</button>
@@ -929,8 +938,8 @@
 
     <section class="doc-block" id="fx-blurs">
       <h2>Blurs</h2>
-      <p class="block-note">Blurs can convey inactive or inaccessible elements — like thumbnails for locked game levels — and separate layered surfaces.</p>
-      <div class="fx-grid"><div class="fx-block"><button class="fx-name" data-copy="blur-none" title="Click to copy token name">blur-none</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="Sample photograph, unblurred" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:0px"></span></div><span class="fx-note">backdrop-blur 0</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-small" title="Click to copy token name">blur-small</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:8px"></span></div><span class="fx-note">backdrop-blur 8</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-medium" title="Click to copy token name">blur-medium</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:16px"></span></div><span class="fx-note">backdrop-blur 16</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-large" title="Click to copy token name">blur-large</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:24px"></span></div><span class="fx-note">backdrop-blur 24</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-xlarge" title="Click to copy token name">blur-xlarge</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:40px"></span></div><span class="fx-note">backdrop-blur 40</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-xxlarge" title="Click to copy token name">blur-xxlarge</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:80px"></span></div><span class="fx-note">backdrop-blur 80</span></div></div>
+      <p class="block-note">Blurs can convey inactive or inaccessible elements, like thumbnails for locked game levels, and separate layered surfaces.</p>
+      <div class="fx-grid"><div class="fx-block"><button class="fx-name" data-copy="blur-none" title="Click to copy token name">blur-none</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="Cleartax notebook and pen mockup, unblurred" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:0px"></span></div><span class="fx-note">backdrop-blur 0</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-small" title="Click to copy token name">blur-small</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:8px"></span></div><span class="fx-note">backdrop-blur 8</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-medium" title="Click to copy token name">blur-medium</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:16px"></span></div><span class="fx-note">backdrop-blur 16</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-large" title="Click to copy token name">blur-large</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:24px"></span></div><span class="fx-note">backdrop-blur 24</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-xlarge" title="Click to copy token name">blur-xlarge</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:40px"></span></div><span class="fx-note">backdrop-blur 40</span></div><div class="fx-block"><button class="fx-name" data-copy="blur-xxlarge" title="Click to copy token name">blur-xxlarge</button><div class="fx-blur"><img src="assets/img/blur-sample.jpg" alt="" style="object-position:50% 50%;" loading="lazy"><span class="veil" style="--b:80px"></span></div><span class="fx-note">backdrop-blur 80</span></div></div>
     </section>
 
     <section class="doc-block" id="fx-rules">
@@ -943,7 +952,7 @@
             <li>Use smaller shadows for cards and larger shadows for menus, popovers, and modals</li>
             <li>Increase elevation subtly on hover or interaction states to signal clickability</li>
             <li>Use blur to separate foreground elements from backgrounds and create depth</li>
-            <li>Use blur selectively — for overlays, backgrounds, and layered surfaces</li>
+            <li>Use blur selectively, for overlays, backgrounds, and layered surfaces</li>
           </ul>
         </div>
         <div class="rules rules--dont">
@@ -1019,7 +1028,7 @@
       <p class="lg-range">1136px &amp; Larger</p>
       <div class="lg-row">
         <figure class="lg-demo lg-demo--full"><figcaption>12 columns | Margin: 112px | Gutter: 32px</figcaption>
-        <div class="lg-canvas" style="--n:12;--m:112px;--g:32px;height:230px;width:100%;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></figure>
+        <div class="lg-canvas lg-canvas--fluid" style="--n:12;--m:9.859%;--g:2.817%;height:230px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></figure>
       </div>
     </section>
 
@@ -1029,11 +1038,11 @@
         <div class="rules rules--do">
           <h3>Do</h3>
           <ul>
-            <li>Align content to the grid — use columns and gutters as consistent alignment points for text, images, and components</li>
+            <li>Align content to the grid, use columns and gutters as consistent alignment points for text, images, and components</li>
             <li>Preserve the same grid logic within each breakpoint; columns, gutters, and margins change only by the defined responsive rules</li>
-            <li>Use the grid to establish hierarchy — wider spans for primary content, narrower spans for secondary</li>
-            <li>Allow elements to span multiple columns when needed — intentional spans, not one column forced on everything</li>
-            <li>Maintain consistent horizontal alignment — related sections share starting and ending points where possible</li>
+            <li>Use the grid to establish hierarchy, wider spans for primary content, narrower spans for secondary</li>
+            <li>Allow elements to span multiple columns when needed, intentional spans, not one column forced on everything</li>
+            <li>Maintain consistent horizontal alignment, related sections share starting and ending points where possible</li>
             <li>Design for the smallest supported viewport first, so content reflows naturally as the grid expands</li>
           </ul>
         </div>
@@ -1042,10 +1051,10 @@
           <ul>
             <li>Align elements by eye when a grid alignment point is available</li>
             <li>Create custom gutters or margins for individual components without a clear layout requirement</li>
-            <li>Mix different grid systems on the same breakpoint — spacing and alignment start to feel inconsistent</li>
-            <li>Force content to fill every column — empty grid space can be intentional and helps hierarchy</li>
-            <li>Let components break the grid without purpose — full-bleed is an intentional exception, not an accident</li>
-            <li>Use the grid as a decorative element — grid lines are a structural guide, not visual styling</li>
+            <li>Mix different grid systems on the same breakpoint, spacing and alignment start to feel inconsistent</li>
+            <li>Force content to fill every column, empty grid space can be intentional and helps hierarchy</li>
+            <li>Let components break the grid without purpose, full-bleed is an intentional exception, not an accident</li>
+            <li>Use the grid as a decorative element, grid lines are a structural guide, not visual styling</li>
           </ul>
         </div>
       </div>
@@ -1057,12 +1066,12 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Foundations</span><span>Components</span></nav>
     <header class="doc-head">
       <h1>Components</h1>
-      <p class="doc-lead">The token tables on Design tokens show what a button's states are worth. This page shows what they look like — buttons, fields, tags, alerts, and layout primitives, rendered live.</p>
+      <p class="doc-lead">The token tables on Design tokens show what a button's states are worth. This page shows what they look like, buttons, fields, tags, alerts, and layout primitives, rendered live.</p>
     </header>
 
     <section class="doc-block" id="cmp-buttons">
       <h2>Buttons</h2>
-      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=6-20" target="_blank" rel="noopener">the Button component set in Figma</a> — 5 types × 5 states × destructive × 3 sizes, 150 variants in the source. These aren't static swatches: hover, click, and tab to each one to see the real state. <b>Click any enabled button to copy its exact Figma variant name</b> — paste it into Figma's search to jump straight to that layer.</p>
+      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=6-20" target="_blank" rel="noopener">the Button component set in Figma</a>, 5 types × 5 states × destructive × 3 sizes, 150 variants in the source. These aren't static swatches: hover, click, and tab to each one to see the real state. <b>Click any enabled button to copy its exact Figma variant name</b>, paste it into Figma's search to jump straight to that layer.</p>
       <div class="fbtn-row">
         <span class="fbtn-row-label">Primary</span>
         <button class="fbtn fbtn--primary" data-copy="Size=Medium, Type=Primary, State=Default, Destructive=No" title="Click to copy Figma variant name">Book a demo</button>
@@ -1088,12 +1097,12 @@
         <button class="fbtn fbtn--link" data-copy="Size=Medium, Type=Link, State=Default, Destructive=No" title="Click to copy Figma variant name">See all invoices</button>
         <button class="fbtn fbtn--link" disabled>Disabled</button>
       </div>
-      <p class="block-note" style="margin-top:22px;">Primary and Secondary invert on hover — solid fill drops to a light fill with coloured text. That swap is intentional in the source, not a bug carried over by mistake.</p>
+      <p class="block-note" style="margin-top:22px;">Primary and Secondary invert on hover, solid fill drops to a light fill with coloured text. That swap is intentional in the source, not a bug carried over by mistake.</p>
     </section>
 
     <section class="doc-block" id="cmp-buttons-destructive">
       <h2>Destructive</h2>
-      <p class="block-note">Every type has a destructive counterpart — same shape and interaction, red in place of brand colour. Reserve these for actions that can't be undone.</p>
+      <p class="block-note">Every type has a destructive counterpart, same shape and interaction, red in place of brand colour. Reserve these for actions that can't be undone.</p>
       <div class="fbtn-row">
         <button class="fbtn fbtn--primary fbtn--destructive" data-copy="Size=Medium, Type=Primary, State=Default, Destructive=Yes" title="Click to copy Figma variant name">Delete account</button>
         <button class="fbtn fbtn--secondary fbtn--destructive" data-copy="Size=Medium, Type=Secondary, State=Default, Destructive=Yes" title="Click to copy Figma variant name">Delete account</button>
@@ -1110,7 +1119,7 @@
         <button class="fbtn fbtn--primary" data-copy="Size=Medium, Type=Primary, State=Default, Destructive=No" title="Click to copy Figma variant name">Book a demo</button>
         <button class="fbtn fbtn--primary fbtn--sm" data-copy="Size=Small, Type=Primary, State=Default, Destructive=No" title="Click to copy Figma variant name">Book a demo</button>
       </div>
-      <p class="block-note" style="margin-top:14px;">Large 48px, Medium 40px (default), Small 32px — the exact heights from the component, with padding tuned so line-height plus padding lands on each number precisely.</p>
+      <p class="block-note" style="margin-top:14px;">Large 48px, Medium 40px (default), Small 32px, the exact heights from the component, with padding tuned so line-height plus padding lands on each number precisely.</p>
     </section>
 
     <section class="doc-block" id="cmp-fields">
@@ -1154,7 +1163,7 @@
 
     <section class="doc-block" id="cmp-badges">
       <h2>Badges</h2>
-      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=83-6566" target="_blank" rel="noopener">the Badge component set in Figma</a> — 5 types × 3 styles × 3 states × 4 shapes × 3 sizes, 540 variants in the source. Hover and tab to any badge below; the disabled one alongside it is a real <code>disabled</code> button. <b>Click any enabled badge to copy its exact Figma variant name</b> — paste it into Figma's search to jump straight to that layer.</p>
+      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=83-6566" target="_blank" rel="noopener">the Badge component set in Figma</a>, 5 types × 3 styles × 3 states × 4 shapes × 3 sizes, 540 variants in the source. Hover and tab to any badge below; the disabled one alongside it is a real <code>disabled</code> button. <b>Click any enabled badge to copy its exact Figma variant name</b>, paste it into Figma's search to jump straight to that layer.</p>
       <div class="fbadge-row">
         <span class="fbadge-row-label">Filled</span>
         <button type="button" class="fbadge fbadge--pill fbadge--primary fbadge--filled" data-copy="Shape=Pill, Size=Large, Type=Primary, Style=Filled, State=Default" title="Click to copy Figma variant name">Primary</button>
@@ -1182,7 +1191,7 @@
         <button type="button" class="fbadge fbadge--pill fbadge--destructive fbadge--outlined" data-copy="Shape=Pill, Size=Large, Type=Destructive, Style=Outlined, State=Default" title="Click to copy Figma variant name">Destructive</button>
         <button type="button" class="fbadge fbadge--pill fbadge--primary fbadge--outlined" disabled>Disabled</button>
       </div>
-      <p class="block-note" style="margin-top:6px;">Rounded (8px corners) and Pill (fully rounded) are the same colour system at two different shapes — this page shows Pill throughout.</p>
+      <p class="block-note" style="margin-top:6px;">Rounded (8px corners) and Pill (fully rounded) are the same colour system at two different shapes, this page shows Pill throughout.</p>
 
       <div class="fbadge-row" style="margin-top:22px;">
         <span class="fbadge-row-label">Dot</span>
@@ -1200,7 +1209,7 @@
         <button type="button" class="fbadge fbadge--circle fbadge--warning fbadge--filled" data-copy="Shape=Circle, Size=Large, Type=Warning, Style=Filled, State=Default" title="Click to copy Figma variant name" aria-label="1 notification">1</button>
         <button type="button" class="fbadge fbadge--circle fbadge--destructive fbadge--filled" data-copy="Shape=Circle, Size=Large, Type=Destructive, Style=Filled, State=Default" title="Click to copy Figma variant name" aria-label="1 notification">1</button>
       </div>
-      <p class="block-note" style="margin-top:14px;">Large shown throughout — the source also defines Medium and Small at the same three heights as the buttons above (48/40/32px → badges scale down to 32/28/24px).</p>
+      <p class="block-note" style="margin-top:14px;">Large shown throughout, the source also defines Medium and Small at the same three heights as the buttons above (48/40/32px → badges scale down to 32/28/24px).</p>
     </section>
 
     <section class="doc-block" id="cmp-alerts">
@@ -1208,7 +1217,7 @@
       <div class="alert-stack">
         <div class="alert alert--info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><p><b>Heads up.</b> Your GSTR-1 filing window opens on the 1st.</p></div>
         <div class="alert alert--notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.7 18a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><p><b>Action needed.</b> Two invoices are missing an e-way bill number.</p></div>
-        <div class="alert alert--negative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p><b>Filing failed.</b> The portal rejected this return — check the error log.</p></div>
+        <div class="alert alert--negative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p><b>Filing failed.</b> The portal rejected this return, check the error log.</p></div>
         <div class="alert alert--positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><p><b>Reconciled.</b> All March invoices now match your books.</p></div>
       </div>
     </section>
@@ -1241,11 +1250,11 @@
 
     <section class="doc-block" id="cmp-breadcrumbs">
       <h2>Breadcrumbs</h2>
-      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=124-40953" target="_blank" rel="noopener">the Breadcrumb component set in Figma</a> — 4 styles × 4 separators × icon-or-not × state. <b>Click any enabled crumb to copy its exact Figma variant name.</b></p>
+      <p class="block-note">Ported from <a href="https://www.figma.com/design/kOuvzveP1oEWwJHRvsgfZy/Cleartax-%7C--Design-System---WIP?node-id=124-40953" target="_blank" rel="noopener">the Breadcrumb component set in Figma</a>, 4 styles × 4 separators × icon-or-not × state. <b>Click any enabled crumb to copy its exact Figma variant name.</b></p>
 
       <div class="fcrumb-row">
         <span class="fcrumb-row-label">Link</span>
-        <nav class="fcrumb" aria-label="Breadcrumb example — Link style">
+        <nav class="fcrumb" aria-label="Breadcrumb example, Link style">
           <span class="fcrumb-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
           <a href="#" data-copy="Type=Icon + Links, Style=Link, Indicator=Chevron" title="Click to copy Figma variant name">Invoices</a>
           <span class="fcrumb-sep">&#8250;</span>
@@ -1257,7 +1266,7 @@
 
       <div class="fcrumb-row">
         <span class="fcrumb-row-label">Box</span>
-        <nav class="fcrumb fcrumb--box" aria-label="Breadcrumb example — Box style">
+        <nav class="fcrumb fcrumb--box" aria-label="Breadcrumb example, Box style">
           <span class="fcrumb-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
           <a href="#" data-copy="Type=Icon + Links, Style=Box, Indicator=Chevron" title="Click to copy Figma variant name">Invoices</a>
           <span class="fcrumb-sep">&#8250;</span>
@@ -1269,7 +1278,7 @@
 
       <div class="fcrumb-row">
         <span class="fcrumb-row-label">Outlined</span>
-        <nav class="fcrumb fcrumb--outlined" aria-label="Breadcrumb example — Outlined style">
+        <nav class="fcrumb fcrumb--outlined" aria-label="Breadcrumb example, Outlined style">
           <a href="#" data-copy="Type=Default, Style=Outlined, Indicator=Chevron" title="Click to copy Figma variant name">Invoices</a>
           <span class="fcrumb-sep">&#8250;</span>
           <a href="#" data-copy="Type=Default, Style=Outlined, Indicator=Chevron" title="Click to copy Figma variant name">March 2026</a>
@@ -1280,7 +1289,7 @@
 
       <div class="fcrumb-row">
         <span class="fcrumb-row-label">Filled</span>
-        <nav class="fcrumb fcrumb--filled" aria-label="Breadcrumb example — Filled style">
+        <nav class="fcrumb fcrumb--filled" aria-label="Breadcrumb example, Filled style">
           <a href="#" data-copy="Type=Default, Style=Filled, Indicator=Chevron" title="Click to copy Figma variant name">Invoices</a>
           <span class="fcrumb-sep">&#8250;</span>
           <a href="#" data-copy="Type=Default, Style=Filled, Indicator=Chevron" title="Click to copy Figma variant name">March 2026</a>
@@ -1291,10 +1300,10 @@
 
       <p class="block-note" style="margin-top:6px;">Every style also supports a disabled crumb, for a step the user can't jump back to:</p>
       <div class="fcrumb-row">
-        <nav class="fcrumb" aria-label="Breadcrumb example — disabled step">
+        <nav class="fcrumb" aria-label="Breadcrumb example, disabled step">
           <a href="#" data-copy="Type=Default, Style=Link, Indicator=Chevron, State=Default">Invoices</a>
           <span class="fcrumb-sep">&#8250;</span>
-          <a href="#" aria-disabled="true" title="Disabled — not a real Figma copy target">March 2026</a>
+          <a href="#" aria-disabled="true" title="Disabled, not a real Figma copy target">March 2026</a>
           <span class="fcrumb-sep">&#8250;</span>
           <span class="fcrumb-current" aria-current="page">GSTR-1</span>
         </nav>
@@ -1340,7 +1349,7 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Design tokens</span><span>Overview</span></nav>
     <header class="doc-head">
       <h1>Design tokens</h1>
-      <p class="doc-lead">526 tokens, exported from Figma and published in the formats you actually build with. Every value on this site comes from these files — if it isn't a token, it isn't in the system.</p>
+      <p class="doc-lead">526 tokens, exported from Figma and published in the formats you actually build with. Every value on this site comes from these files, if it isn't a token, it isn't in the system.</p>
       <a class="btn btn--primary" href="assets/downloads/cleartax-tokens.zip" download>Download all tokens (.zip)<span aria-hidden="true">↓</span></a>
     </header>
 
@@ -1354,24 +1363,24 @@
           <li><b>11</b><span>Border</span></li>
           <li><b>5</b><span>Layout</span></li>
       </ul>
-      <p class="block-note" style="margin-top:20px;">These are the tokens the Cleartax system actually uses. The raw Figma variable export carries 187 further primitive values — Tailwind default ramps nothing here references — which are excluded from these counts and hidden on <a href="#tokens-primitives" data-route="tokens-primitives">Primitives</a>. They remain in the downloadable JSON, so the export stays a faithful copy of the Figma file.</p>
+      <p class="block-note" style="margin-top:20px;">These are the tokens the Cleartax system actually uses. The raw Figma variable export carries 187 further primitive values. Tailwind default ramps nothing here references, which are excluded from these counts and hidden on <a href="#tokens-primitives" data-route="tokens-primitives">Primitives</a>. They remain in the downloadable JSON, so the export stays a faithful copy of the Figma file.</p>
     </section>
 
     <section class="doc-block" id="tokens-tiers">
       <h2>Three tiers</h2>
-      <p class="block-note">Tokens layer. Reach for the highest tier that answers your question — it keeps product code insulated from palette changes.</p>
+      <p class="block-note">Tokens layer. Reach for the highest tier that answers your question, it keeps product code insulated from palette changes.</p>
       <ol class="tier-list">
         <li>
           <span class="tier-num">1</span>
-          <div><b>Primitives</b> — the raw ramps (<code>--ct-color-secondary-indigo-500</code>). Never reference these in product code.</div>
+          <div><b>Primitives</b>, the raw ramps (<code>--ct-color-secondary-indigo-500</code>). Never reference these in product code.</div>
         </li>
         <li>
           <span class="tier-num">2</span>
-          <div><b>Semantics</b> — intent, not hue (<code>--ct-color-content-primary</code>). <b>This is the tier you should be using.</b></div>
+          <div><b>Semantics</b>, intent, not hue (<code>--ct-color-content-primary</code>). <b>This is the tier you should be using.</b></div>
         </li>
         <li>
           <span class="tier-num">3</span>
-          <div><b>Component</b> — per-component values. These now live inside Semantics as <code>--ct-color-background-button-primary-hover</code> and friends, so in practice tier&nbsp;2 is where you stop.</div>
+          <div><b>Component</b>, per-component values. These now live inside Semantics as <code>--ct-color-background-button-primary-hover</code> and friends, so in practice tier&nbsp;2 is where you stop.</div>
         </li>
       </ol>
     </section>
@@ -1391,21 +1400,21 @@
     <section class="doc-block" id="tokens-formats">
       <h2>Formats in the bundle</h2>
       <ul class="file-list">
-          <li><code>cleartax-tokens.css</code><span>CSS custom properties on <code>:root</code> — drop in and go.</span></li>
+          <li><code>cleartax-tokens.css</code><span>CSS custom properties on <code>:root</code>, drop in and go.</span></li>
           <li><code>cleartax-tokens.scss</code><span>SCSS variables, <code>$ct-…</code>.</span></li>
           <li><code>cleartax-tokens.js</code><span>ES module, grouped by category.</span></li>
           <li><code>cleartax-tokens.json</code><span>Normalized JSON for any pipeline.</span></li>
           <li><code>figma/*.json</code><span>The untouched Figma exports, W3C token shape.</span></li>
       </ul>
-      <p class="block-note">Tip: every row here is a button — click to copy. Token rows give you the CSS variable; swatches on <b>Primitives</b> and <b>Color</b> give you the hex.</p>
+      <p class="block-note">Tip: every row here is a button, click to copy. Token rows give you the CSS variable; swatches on <b>Primitives</b> and <b>Color</b> give you the hex.</p>
     </section>
 
-    <section class="doc-block" id="tokens-gaps">
+    <section class="doc-block" hidden>
       <h2>Known gaps in the source</h2>
       <p class="block-note">Flagging these so nobody burns an afternoon on them. They're upstream data issues, not site bugs.</p>
       <ul class="principle-list">
         <li><b>Surface.L0–L6 are all #FFFFFF.</b> Elevation isn't differentiated yet, so the seven surface tokens are interchangeable today.</li>
-        <li><b>The <code>Components</code> collection is superseded.</b> Its 14 button tokens are a grayscale set (<code>#F3F4F6</code>, <code>#111827</code>…) that nothing in the system uses — the real button values now ship as <code>Content|Background / Button / …</code> inside Semantics. It still exports from Figma, so it stays in the download, but it is no longer documented here.</li>
+        <li><b>The <code>Components</code> collection is superseded.</b> Its 14 button tokens are a grayscale set (<code>#F3F4F6</code>, <code>#111827</code>…) that nothing in the system uses, the real button values now ship as <code>Content|Background / Button / …</code> inside Semantics. It still exports from Figma, so it stays in the download, but it is no longer documented here.</li>
         <li><b>One ramp repeats a value.</b> <code>Destructive.400</code> and <code>500</code> are both <code>#EF4444</code>. (The old <code>Blue.300</code>/<code>400</code> collision is fixed in the current export.)</li>
         <li><b>Radius / Circle is <code>50</code> in Figma.</b> Published as <code>50%</code> here, since that's what makes a circle in CSS.</li>
         <li><b>One placeholder token was excluded.</b> <code>Typography.Icon</code> has the literal value “String value”, so it's left out of the generated formats.</li>
@@ -1416,14 +1425,14 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Design tokens</span><span>Primitives</span></nav>
     <header class="doc-head">
       <h1>Colour primitives</h1>
-      <p class="doc-lead">The raw ramps — 134 colours across 13 families. These are the paint, not the instructions. Build with semantic tokens instead and let these sit underneath.</p>
-      <p class="doc-lead" style="margin-top:12px;">17 further ramps (187 values) ship in the Figma variable export — Slate, Zinc, Teal, Emerald, Cyan, Sky, Violet, Fuchsia, Pink, Rose, Purple, Orange, and Yellow — but nothing in the Cleartax system uses them. They're Tailwind defaults that came along with the export, so they're hidden here. They're still present in <code>primitives.json</code> if you need to look one up.</p>
+      <p class="doc-lead">The raw ramps, 134 colours across 13 families. These are the paint, not the instructions. Build with semantic tokens instead and let these sit underneath.</p>
+      <p class="doc-lead" style="margin-top:12px;">17 further ramps (187 values) ship in the Figma variable export. Slate, Zinc, Teal, Emerald, Cyan, Sky, Violet, Fuchsia, Pink, Rose, Purple, Orange, and Yellow, but nothing in the Cleartax system uses them. They're Tailwind defaults that came along with the export, so they're hidden here. They're still present in <code>primitives.json</code> if you need to look one up.</p>
       <p class="doc-lead" style="margin-top:12px;">Our brand four live here: navy is <code>Primary / 950</code>, off-white is <code>Secondary / Stone / 100</code>, lime is <code>Secondary / Lime / 500</code>, violet is <code>Secondary / Indigo / 500</code>.</p>
       <div class="btn-row"><a class="btn btn--ghost" href="assets/tokens/json/primitives.json" data-download="primitives" data-filename="primitives.json" download>primitives.json<span aria-hidden="true">↓</span></a></div>
     </header>
     <section class="doc-block" id="prim-families">
       <h2>Families</h2>
-      <p class="block-note">Click any shade to copy its hex code — the CSS variable name is in the tooltip.</p>
+      <p class="block-note">Click any shade to copy its hex code, the CSS variable name is in the tooltip.</p>
         <div class="fam">
           <h3>Neutral <span>11</span></h3>
           <div class="shade-row">
@@ -2160,9 +2169,9 @@
           </button>
         </div>
       </section>
-      <section class="doc-block" id="sem-surface">
+      <section class="doc-block" hidden>
         <h2>Surface</h2>
-        <p class="block-note">Elevation layers. All seven are white today — elevation is not yet differentiated.</p>
+        <p class="block-note">Elevation layers. All seven are white today, elevation is not yet differentiated.</p>
         <div class="tok-table">
           <button class="tok-row" data-copy="--ct-color-surface-l0" title="Copy --ct-color-surface-l0">
             <span class="tok-chip" style="background:#FFFFFF"></span>
@@ -2231,7 +2240,7 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Design tokens</span><span>Typography</span></nav>
     <header class="doc-head">
       <h1>Type tokens</h1>
-      <p class="doc-lead">45 tokens covering family, weight, size, line height, and letter spacing. The source now names <b>Inter Tight</b> as primary and <b>Google Sans</b> as secondary — matching what this site renders in.</p>
+      <p class="doc-lead">45 tokens covering family, weight, size, line height, and letter spacing. The source now names <b>Inter Tight</b> as primary and <b>Google Sans</b> as secondary, matching what this site renders in.</p>
       <div class="btn-row"><a class="btn btn--ghost" href="assets/tokens/json/typography.json" data-download="typography" data-filename="typography.json" download>typography.json<span aria-hidden="true">↓</span></a></div>
     </header>
       <section class="doc-block" id="type-family">
@@ -2789,7 +2798,7 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Resources</span><span>Usage</span></nav>
     <header class="doc-head">
       <h1>Usage</h1>
-      <p class="doc-lead">The system, assembled. This is the live Rebrand prototype — click through it to see how colour, type, icons, and spacing behave together in a real product flow rather than as isolated specs.</p>
+      <p class="doc-lead">The system, assembled. This is the live Rebrand prototype, click through it to see how colour, type, icons, and spacing behave together in a real product flow rather than as isolated specs.</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="https://www.figma.com/proto/rg3jbzBfto7B7mNgRX5PZQ/Rebrand?node-id=377-43152&scaling=scale-down&content-scaling=fixed&starting-point-node-id=377%3A43152" target="_blank" rel="noopener">Open prototype<span aria-hidden="true">↗</span></a>
         <a class="btn btn--ghost" href="https://www.figma.com/design/rg3jbzBfto7B7mNgRX5PZQ/Rebrand?node-id=35-2" target="_blank" rel="noopener">Open Figma file<span aria-hidden="true">↗</span></a>
@@ -2798,7 +2807,7 @@
 
     <section class="doc-block" id="usage-prototype">
       <h2>Interactive prototype</h2>
-      <p class="block-note">Click hotspots to navigate, exactly as a user would. The embed loads for anyone signed into Figma with access to the <b>Rebrand</b> file; if you see a permission screen instead, set the file to “Anyone with the link can view” — or use <b>Open prototype</b> above.</p>
+      <p class="block-note">Click hotspots to navigate, exactly as a user would. The embed loads for anyone signed into Figma with access to the <b>Rebrand</b> file; if you see a permission screen instead, set the file to “Anyone with the link can view”, or use <b>Open prototype</b> above.</p>
       <div class="embed-frame">
         <iframe title="Cleartax Rebrand interactive prototype" src="https://embed.figma.com/proto/rg3jbzBfto7B7mNgRX5PZQ/Rebrand?node-id=377-43152&scaling=scale-down&content-scaling=fixed&starting-point-node-id=377%3A43152&embed-host=share"
           allowfullscreen loading="lazy"></iframe>
@@ -2808,7 +2817,7 @@
     <section class="doc-block" id="usage-reading">
       <h2>What to look for</h2>
       <ul class="principle-list">
-        <li><b>Off-white carries the layout.</b> Roughly half of every screen is empty space — that's deliberate, not unfinished.</li>
+        <li><b>Off-white carries the layout.</b> Roughly half of every screen is empty space, that's deliberate, not unfinished.</li>
         <li><b>Violet only ever means "act".</b> Track it through the flow: it appears on the primary action and nowhere else.</li>
         <li><b>Lime punctuates, never decorates.</b> One highlight per screen at most.</li>
         <li><b>Navy does the talking.</b> Headlines and body copy sit in navy on off-white, not pure black on white.</li>
@@ -2818,7 +2827,7 @@
 
     <section class="doc-block" id="usage-source">
       <h2>Source of truth</h2>
-      <p class="block-note">The prototype lives in the <b>Rebrand</b> Figma file. Anything that contradicts the token pages here should be treated as drift — the tokens win, and the file gets corrected.</p>
+      <p class="block-note">The prototype lives in the <b>Rebrand</b> Figma file. Anything that contradicts the token pages here should be treated as drift, the tokens win, and the file gets corrected.</p>
     </section>
   </article>
   <!-- ---------- APPLICATIONS ---------- -->
@@ -2838,7 +2847,7 @@
               <img src="assets/applications/decks-01.jpg" alt="Preview of Decks" loading="lazy">
               <span class="app-card-badge">9 slides</span>
             </div>
-            <div class="figure-cap"><span class="cap-title">Decks</span><span class="cap-note">Data-forward slide layouts — indigo blocks, lime highlights, generous white space.</span></div>
+            <div class="figure-cap"><span class="cap-title">Decks</span><span class="cap-note">Data-forward slide layouts, indigo blocks, lime highlights, generous white space.</span></div>
           </button>
           <button class="app-card" onclick="openGallery('social')" aria-haspopup="dialog">
             <div class="app-card-media">
@@ -2852,7 +2861,7 @@
               <img src="assets/applications/assets-01.jpg" alt="Preview of Sales assets" loading="lazy">
               <span class="app-card-badge">10 covers</span>
             </div>
-            <div class="figure-cap"><span class="cap-title">Sales assets</span><span class="cap-note">Playbooks, case studies, and opinion notes — editorial covers, dense reference pages.</span></div>
+            <div class="figure-cap"><span class="cap-title">Sales assets</span><span class="cap-note">Playbooks, case studies, and opinion notes, editorial covers, dense reference pages.</span></div>
           </button>
           <button class="app-card" onclick="openGallery('merch')" aria-haspopup="dialog">
             <div class="app-card-media">
@@ -2870,7 +2879,7 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Guidelines</span><span>Motion</span></nav>
     <header class="doc-head">
       <h1>Motion</h1>
-      <p class="doc-lead">Motion confirms an action happened and orients the eye during a change of state — it never exists for its own sake. These are the exact durations and easings this site's own transitions run on.</p>
+      <p class="doc-lead">Motion confirms an action happened and orients the eye during a change of state, it never exists for its own sake. These are the exact durations and easings this site's own transitions run on.</p>
     </header>
 
     <section class="doc-block" id="motion-duration">
@@ -2881,7 +2890,7 @@
       <div class="motion-row"><span class="motion-label">Lightbox open</span><div class="motion-bar" style="width:42%;"></div><span class="motion-val">280ms</span></div>
       <div class="motion-row"><span class="motion-label">Lightbox close</span><div class="motion-bar" style="width:24%;"></div><span class="motion-val">160ms</span></div>
       <div class="motion-row"><span class="motion-label">Cursor tracking</span><div class="motion-bar" style="width:18%;"></div><span class="motion-val">120ms</span></div>
-      <p class="block-note" style="margin-top:18px;">Under 150ms reads as instant feedback (hover snaps, the cursor). 200–300ms suits a full view or panel change. Closing is always faster than opening — leaving should feel quicker than arriving.</p>
+      <p class="block-note" style="margin-top:18px;">Under 150ms reads as instant feedback (hover snaps, the cursor). 200–300ms suits a full view or panel change. Closing is always faster than opening, leaving should feel quicker than arriving.</p>
     </section>
 
     <section class="doc-block" id="motion-easing">
@@ -2890,17 +2899,17 @@
         <div class="ease-card">
           <svg class="ease-svg" viewBox="0 0 100 66" fill="none" aria-hidden="true"><path class="ease-path" d="M4 46 C 22 4, 60 4, 96 4" stroke="var(--violet)" stroke-width="3" stroke-linecap="round"/><line class="ease-track" x1="4" y1="59" x2="96" y2="59" stroke-width="2" stroke-linecap="round"/><circle class="ease-runner" cx="4" cy="59" r="4"/><circle class="ease-dot" cx="4" cy="46" r="4.5"/></svg>
           <div class="ease-name">power2.out</div>
-          <div class="ease-use">Used on every entrance — view fade-in, nav accordion open, lightbox open. Fast start, gentle settle.</div>
+          <div class="ease-use">Used on every entrance, view fade-in, nav accordion open, lightbox open. Fast start, gentle settle.</div>
         </div>
         <div class="ease-card">
           <svg class="ease-svg" viewBox="0 0 100 66" fill="none" aria-hidden="true"><path class="ease-path" d="M4 46 C 40 46, 70 30, 96 4" stroke="var(--violet)" stroke-width="3" stroke-linecap="round"/><line class="ease-track" x1="4" y1="59" x2="96" y2="59" stroke-width="2" stroke-linecap="round"/><circle class="ease-runner" cx="4" cy="59" r="4"/><circle class="ease-dot" cx="4" cy="46" r="4.5"/></svg>
           <div class="ease-name">power1.in</div>
-          <div class="ease-use">Used only on the lightbox close — starts slow, accelerates away, signalling "leaving."</div>
+          <div class="ease-use">Used only on the lightbox close, starts slow, accelerates away, signalling "leaving."</div>
         </div>
         <div class="ease-card">
           <svg class="ease-svg" viewBox="0 0 100 66" fill="none" aria-hidden="true"><path class="ease-path" d="M4 46 C 12 8, 34 4, 96 4" stroke="var(--violet)" stroke-width="3" stroke-linecap="round"/><line class="ease-track" x1="4" y1="59" x2="96" y2="59" stroke-width="2" stroke-linecap="round"/><circle class="ease-runner" cx="4" cy="59" r="4"/><circle class="ease-dot" cx="4" cy="46" r="4.5"/></svg>
           <div class="ease-name">power3.out</div>
-          <div class="ease-use">Used for cursor tracking only — the snappiest curve, reserved for something that follows the pointer every frame.</div>
+          <div class="ease-use">Used for cursor tracking only, the snappiest curve, reserved for something that follows the pointer every frame.</div>
         </div>
       </div>
     </section>
@@ -2919,13 +2928,13 @@
         <div class="rules rules--dont">
           <h3>Don't</h3>
           <ul>
-            <li>Animate on every hover — reserve it for clickable elements</li>
+            <li>Animate on every hover, reserve it for clickable elements</li>
             <li>Stagger a long list; past ~12 items it reads as lag, not polish</li>
             <li>Chain more than two motions for one action</li>
           </ul>
         </div>
       </div>
-      <p class="block-note" style="margin-top:20px;">Every transition here is skipped outright under <code>prefers-reduced-motion</code> — views still switch, the accordion still opens, just without the tween.</p>
+      <p class="block-note" style="margin-top:20px;">Every transition here is skipped outright under <code>prefers-reduced-motion</code>, views still switch, the accordion still opens, just without the tween.</p>
     </section>
   </article>
 
@@ -2957,7 +2966,7 @@
           <div class="contrast-meta"><span>15.19 : 1</span><span class="contrast-badge contrast-badge--pass">AA &amp; AAA pass</span></div>
         </div>
       </div>
-      <p class="block-note" style="margin-top:20px;"><b>Nova Blue on Ledger White passes AA but not AAA</b> — safe for headlines, links, and icons; for dense small body copy where higher readability is required, use Vault Navy instead.</p>
+      <p class="block-note" style="margin-top:20px;"><b>Nova Blue on Ledger White passes AA but not AAA</b>, safe for headlines, links, and icons; for dense small body copy where higher readability is required, use Vault Navy instead.</p>
     </section>
 
     <section class="doc-block" id="a11y-focus">
@@ -2967,7 +2976,7 @@
 
     <section class="doc-block" id="a11y-alt">
       <h2>Alt text <small class="dev-tag">for developers</small></h2>
-      <p class="block-note">Use an empty <code>alt=""</code> for icon images and provide the icon name through the button&rsquo;s <code>aria-label</code> and hover/focus tooltip — so screen readers announce the name once instead of reading the same information twice. For icons still named &ldquo;Group…&rdquo; in Figma, use their Figma ID as a temporary accessible name until they receive a proper one. Never leave an interactive icon without an accessible name.</p>
+      <p class="block-note">Use an empty <code>alt=""</code> for icon images and provide the icon name through the button&rsquo;s <code>aria-label</code> and hover/focus tooltip, so screen readers announce the name once instead of reading the same information twice. For icons still named &ldquo;Group…&rdquo; in Figma, use their Figma ID as a temporary accessible name until they receive a proper one. Never leave an interactive icon without an accessible name.</p>
     </section>
 
     <section class="doc-block" id="a11y-practices">
@@ -3011,16 +3020,16 @@
       <nav class="crumb" aria-label="Breadcrumb"><span>Guidelines</span><span>Voice &amp; content</span></nav>
     <header class="doc-head">
       <h1>Voice &amp; content</h1>
-      <p class="doc-lead">This page's own copy is the spec — short, declarative sentences that state a rule and then the reason for it. Every doc-lead on this site follows the same shape; here's why, made explicit.</p>
+      <p class="doc-lead">This page's own copy is the spec, short, declarative sentences that state a rule and then the reason for it. Every doc-lead on this site follows the same shape; here's why, made explicit.</p>
     </header>
 
     <section class="doc-block" id="voice-principles">
       <h2>Principles</h2>
       <ul class="principle-list">
-        <li><b>State the rule, then the reason.</b> "Off-white covers half of any layout on purpose" — not "we recommend generous use of white space for a clean aesthetic."</li>
+        <li><b>State the rule, then the reason.</b> "Off-white covers half of any layout on purpose", not "we recommend generous use of white space for a clean aesthetic."</li>
         <li><b>One sentence, one idea.</b> If a lead paragraph needs a semicolon to fit everything in, it's two sentences that haven't been split yet.</li>
-        <li><b>Name the next step, not the mechanism.</b> Buttons say "Book a demo" and "Talk to an expert" — never "Submit" or "Learn more about our platform."</li>
-        <li><b>Flag gaps instead of hiding them.</b> See <a href="#tokens" data-route="tokens">Design tokens → Known gaps</a> — say what's missing and why, rather than smoothing it over.</li>
+        <li><b>Name the next step, not the mechanism.</b> Buttons say "Book a demo" and "Talk to an expert", never "Submit" or "Learn more about our platform."</li>
+        <li><b>Flag gaps instead of hiding them.</b> See <a href="#tokens" data-route="tokens">Design tokens → Known gaps</a>, say what's missing and why, rather than smoothing it over.</li>
       </ul>
     </section>
 
@@ -3041,7 +3050,7 @@
         </div>
         <div class="info-card">
           <h3 style="color:#2F8A46;">Prefer</h3>
-          <p>"Restraint over decoration. If a layout starts looking like a rainbow, we've gone too far." — the Overview page, unchanged.</p>
+          <p>"Restraint over decoration. If a layout starts looking like a rainbow, we've gone too far.", the Overview page, unchanged.</p>
         </div>
       </div>
     </section>
@@ -3067,7 +3076,7 @@
 </div>
 
 <script>
-/* assigned onto window so js/main.js can read it — a bare `const` here
+/* assigned onto window so js/main.js can read it, a bare `const` here
    would live in script scope only and never appear on window. */
 window.GALLERIES = {
   "decks": [
