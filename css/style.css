@@ -1231,3 +1231,13 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 80px 14
   background:var(--navy,#05022A);border-radius:100px;}
 .pat-arc span{font-family:var(--font-display);font-size:15px;font-weight:600;color:#F2F1F0;letter-spacing:.2px;}
 .pat-arc i{font-style:normal;color:#C8F006;font-size:16px;line-height:1;}
+
+/* Illustrations: hover to download a single asset, matching the logo cards. */
+.illu-tile{position:relative;}
+.illu-tile .illu-dl{bottom:10px;white-space:nowrap;}
+.illu-tile:hover .illu-dl,.illu-tile .illu-dl:focus-visible{opacity:1;transform:translate(-50%,0);}
+
+/* Pattern page: hover a style to download that pattern on its own, without the hero copy. */
+.pat-fig{position:relative;}
+.pat-fig .pat-dl{bottom:16px;white-space:nowrap;}
+.pat-fig:hover .pat-dl,.pat-fig .pat-dl:focus-visible{opacity:1;transform:translate(-50%,0);}
